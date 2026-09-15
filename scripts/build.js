@@ -8,6 +8,7 @@ const projectRoot = path.resolve(__dirname, '..');
 const htmlPath = path.join(projectRoot, 'index.html');
 const cssPath = path.join(projectRoot, 'css', 'style.css');
 const jsPath = path.join(projectRoot, 'js', 'main.js');
+const faviconPath = path.join(projectRoot, 'favicon.svg');
 const distDir = path.join(projectRoot, 'dist');
 
 let hasError = false;
@@ -25,6 +26,7 @@ function reportCheck(name, pass, msg = '') {
 reportCheck('index.html exists', fs.existsSync(htmlPath));
 reportCheck('css/style.css exists', fs.existsSync(cssPath));
 reportCheck('js/main.js exists', fs.existsSync(jsPath));
+reportCheck('favicon.svg exists', fs.existsSync(faviconPath));
 
 if (hasError) {
   process.exit(1);
@@ -64,15 +66,16 @@ for (const field of requiredFields) {
 
 // 4. トンマナ・コピーチェック
 reportCheck('Orange tone colors defined in CSS', /--primary:\s*#E85A18/.test(cssContent));
-reportCheck('Hero Cabinet Decision text present', htmlContent.includes('8月5日閣議決定') || htmlContent.includes('閣議決定'));
-reportCheck('Takeout 1% tax rate emphasized', htmlContent.includes('テイクアウト') && htmlContent.includes('1%'));
+reportCheck('Takeout & Delivery tax rate emphasized', htmlContent.includes('テイクアウト・デリバリー') && htmlContent.includes('1%'));
 reportCheck('Non-assertion rule followed (可能性があります)', htmlContent.includes('可能性があります'));
-reportCheck('Gov policy note present (※政府基本方針に基づく)', htmlContent.includes('政府基本方針') || htmlContent.includes('閣議決定'));
 reportCheck('No service price numbers shown in LP', !htmlContent.includes('20,000円') && !htmlContent.includes('月額2万'));
 reportCheck('No automated score diagnosis in LP', !htmlContent.includes('78点') && !htmlContent.includes('AI診断'));
 reportCheck('Proven brand case: 豚丼ジャンクキング / 豚キムチ / 生姜野郎', htmlContent.includes('豚丼ジャンクキング') && htmlContent.includes('生姜野郎'));
 reportCheck('Proven brand case: 風来麻辣湯', htmlContent.includes('風来麻辣湯'));
-reportCheck('Company info present: 株式会社テラスヒ / 後野智行', htmlContent.includes('株式会社テラスヒ') && htmlContent.includes('後野智行'));
+reportCheck('Solution title updated', htmlContent.includes('メニュー導入からデリバリー運用まで、まとめてサポート'));
+reportCheck('Proven brand note updated', htmlContent.includes('スイーツメニューもご用意'));
+reportCheck('Company info present: 株式会社テラスヒ', htmlContent.includes('株式会社テラスヒ'));
+reportCheck('Manager info removed from footer', !htmlContent.includes('担当者：後野智行'));
 
 // 5. distディレクトリへのビルド出力
 if (!fs.existsSync(distDir)) {
@@ -86,8 +89,11 @@ if (!fs.existsSync(distJsDir)) fs.mkdirSync(distJsDir, { recursive: true });
 fs.writeFileSync(path.join(distDir, 'index.html'), htmlContent, 'utf-8');
 fs.writeFileSync(path.join(distCssDir, 'style.css'), cssContent, 'utf-8');
 fs.writeFileSync(path.join(distJsDir, 'main.js'), jsContent, 'utf-8');
+if (fs.existsSync(faviconPath)) {
+  fs.copyFileSync(faviconPath, path.join(distDir, 'favicon.svg'));
+}
 
-reportCheck('Dist assets generated successfully in /dist', fs.existsSync(path.join(distDir, 'index.html')));
+reportCheck('Dist assets generated successfully in /dist', fs.existsSync(path.join(distDir, 'index.html')) && fs.existsSync(path.join(distDir, 'favicon.svg')));
 
 if (hasError) {
   console.error('\nBuild failed with errors.');

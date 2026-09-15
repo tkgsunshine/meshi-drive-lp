@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B18"/>
+      <stop offset="100%" stop-color="#D14D0E"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- 背景角丸スクエア -->
+  <rect width="512" height="512" rx="120" fill="url(#orangeGrad)"/>
+  
+  <!-- ロゴモチーフ: どんぶり＋スピード感のあるドライブライン -->
+  <g transform="translate(0, 10)">
+    <!-- 湯気・スチーム・ドライブライン -->
+    <path d="M190 140 C190 110, 220 100, 210 70" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" opacity="0.95"/>
+    <path d="M256 130 C256 95, 290 85, 276 50" fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+    <path d="M322 140 C322 110, 352 100, 342 70" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" opacity="0.95"/>
+    
+    <!-- どんぶり本体 -->
+    <path d="M110 200 H402 Q408 200 404 212 L350 330 Q330 370 256 370 Q182 370 162 330 L108 212 Q104 200 110 200 Z" fill="#FFFFFF" filter="url(#shadow)"/>
+    
+    <!-- 高台（どんぶりの足） -->
+    <path d="M190 370 H322 V395 Q322 410 307 410 H205 Q190 410 190 395 Z" fill="#FFFFFF" opacity="0.95"/>
+    
+    <!-- どんぶりのフチのアクセントライン (Meshi Orange) -->
+    <path d="M125 224 H387" stroke="#E85A18" stroke-width="14" stroke-linecap="round"/>
+  </g>
+</svg>
