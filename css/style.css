@@ -289,28 +289,35 @@ button, input, select, textarea {
 }
 
 .hero-catch {
-  font-size: 2.6rem;
+  font-size: 2.15rem;
   font-weight: 900;
-  line-height: 1.35;
+  line-height: 1.45;
   color: var(--dark);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin-bottom: 28px;
+  text-align: center;
 }
 
-.hero-phrase {
-  display: inline-block;
-  white-space: nowrap;
+.hero-line1,
+.hero-line2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-line2 {
+  margin-top: 4px;
 }
 
 .hero-catch .num-highlight {
   color: var(--primary);
-  font-size: 3.2rem;
+  font-size: 2.75rem;
   font-weight: 900;
 }
 
 .hero-catch .old-num {
   color: var(--text-light);
-  font-size: 2.2rem;
+  font-size: 1.85rem;
   text-decoration: line-through;
   font-weight: 800;
 }
@@ -1328,9 +1335,11 @@ html, body {
     overflow-wrap: break-word;
   }
 
-  .hero-phrase {
+  .hero-line1,
+  .hero-line2 {
     display: inline;
     white-space: normal;
+    text-align: center;
   }
 
   .hero-catch .num-highlight {
