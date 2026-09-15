@@ -83,8 +83,12 @@ if (!fs.existsSync(distDir)) {
 }
 const distCssDir = path.join(distDir, 'css');
 const distJsDir = path.join(distDir, 'js');
+const distImagesDir = path.join(distDir, 'images');
+const imagesDir = path.join(projectRoot, 'images');
+
 if (!fs.existsSync(distCssDir)) fs.mkdirSync(distCssDir, { recursive: true });
 if (!fs.existsSync(distJsDir)) fs.mkdirSync(distJsDir, { recursive: true });
+if (!fs.existsSync(distImagesDir)) fs.mkdirSync(distImagesDir, { recursive: true });
 
 fs.writeFileSync(path.join(distDir, 'index.html'), htmlContent, 'utf-8');
 fs.writeFileSync(path.join(distCssDir, 'style.css'), cssContent, 'utf-8');
@@ -92,8 +96,11 @@ fs.writeFileSync(path.join(distJsDir, 'main.js'), jsContent, 'utf-8');
 if (fs.existsSync(faviconPath)) {
   fs.copyFileSync(faviconPath, path.join(distDir, 'favicon.svg'));
 }
+if (fs.existsSync(imagesDir)) {
+  fs.cpSync(imagesDir, distImagesDir, { recursive: true });
+}
 
-reportCheck('Dist assets generated successfully in /dist', fs.existsSync(path.join(distDir, 'index.html')) && fs.existsSync(path.join(distDir, 'favicon.svg')));
+reportCheck('Dist assets generated successfully in /dist', fs.existsSync(path.join(distDir, 'index.html')) && fs.existsSync(path.join(distImagesDir, 'brand-butakimchi.png')));
 
 if (hasError) {
   console.error('\nBuild failed with errors.');
