@@ -1,6 +1,5 @@
 {
-  "version": 2,
-  "name": "meshi-drive-lp",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
 }

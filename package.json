@@ -1,7 +1,6 @@
 {
   "name": "meshi-drive-lp",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "build": "node scripts/build.js",
     "test": "node scripts/build.js"
