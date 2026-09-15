@@ -291,10 +291,15 @@ button, input, select, textarea {
 .hero-catch {
   font-size: 2.6rem;
   font-weight: 900;
-  line-height: 1.3;
+  line-height: 1.35;
   color: var(--dark);
   letter-spacing: -0.03em;
   margin-bottom: 28px;
+}
+
+.hero-phrase {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .hero-catch .num-highlight {
