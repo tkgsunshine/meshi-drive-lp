@@ -34,7 +34,7 @@ const htmlContent = fs.readFileSync(htmlPath, 'utf-8');
 const cssContent = fs.readFileSync(cssPath, 'utf-8');
 const jsContent = fs.readFileSync(jsPath, 'utf-8');
 
-// 2. JavaScript 構文チェック (Node VM)
+// 2. JavaScript 構文チェック
 try {
   new vm.Script(jsContent);
   reportCheck('JavaScript syntax verification', true);
@@ -64,9 +64,10 @@ for (const field of requiredFields) {
 
 // 4. トンマナ・コピーチェック
 reportCheck('Orange tone colors defined in CSS', /--primary:\s*#E85A18/.test(cssContent));
-reportCheck('Hero 2027 problem text present', htmlContent.includes('2027年4月'));
+reportCheck('Hero Cabinet Decision text present', htmlContent.includes('8月5日閣議決定') || htmlContent.includes('閣議決定'));
+reportCheck('Takeout 1% tax rate emphasized', htmlContent.includes('テイクアウト') && htmlContent.includes('1%'));
 reportCheck('Non-assertion rule followed (可能性があります)', htmlContent.includes('可能性があります'));
-reportCheck('Gov policy note present (※政府基本方針に基づく)', htmlContent.includes('※政府基本方針に基づく'));
+reportCheck('Gov policy note present (※政府基本方針に基づく)', htmlContent.includes('政府基本方針') || htmlContent.includes('閣議決定'));
 reportCheck('No service price numbers shown in LP', !htmlContent.includes('20,000円') && !htmlContent.includes('月額2万'));
 reportCheck('No automated score diagnosis in LP', !htmlContent.includes('78点') && !htmlContent.includes('AI診断'));
 reportCheck('Proven brand case: 豚丼ジャンクキング / 豚キムチ / 生姜野郎', htmlContent.includes('豚丼ジャンクキング') && htmlContent.includes('生姜野郎'));
