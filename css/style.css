@@ -299,15 +299,9 @@ button, input, select, textarea {
   max-width: 1100px;
 }
 
-.hero-line1,
-.hero-line2 {
-  display: block;
-  width: 100%;
+.hero-catch .hero-line {
+  display: inline-block;
   text-align: center;
-}
-
-.hero-line2 {
-  margin-top: 8px;
 }
 
 .hero-catch .num-highlight {
@@ -1336,8 +1330,7 @@ html, body {
     overflow-wrap: break-word;
   }
 
-  .hero-line1,
-  .hero-line2 {
+  .hero-catch .hero-line {
     display: inline;
     white-space: normal;
     text-align: center;
