@@ -1,6 +1,6 @@
 /* ==========================================================================
    Meshi Drive (メシドライブ) Meta広告用LP スタイルシート
-   コンセプト: 8/5閣議決定「テイクアウト1%」を強力に押し出し、デリバリー参入・CVへ導く設計
+   コンセプト: 8/5閣議決定「テイクアウト1%」強調 ＋ 洗練されたCSSアニメーション演出
    ========================================================================== */
 
 :root {
@@ -98,6 +98,129 @@ button, input, select, textarea {
   }
 }
 
+/* ==========================================================================
+   ✨ アニメーション & アテンションエフェクト
+   ========================================================================== */
+
+/* 1. 閣議決定バッジの脈動（パルス）アニメーション */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+/* 2. 注目数字のじんわりグラデーション呼吸 */
+@keyframes numGlow {
+  0%, 100% {
+    filter: drop-shadow(0 2px 4px rgba(232, 90, 24, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 6px 14px rgba(232, 90, 24, 0.6));
+  }
+}
+
+.animate-num-glow {
+  animation: numGlow 3s infinite ease-in-out;
+}
+
+/* 3. ボタン・カード用光沢スウィープ（Shine Effect） */
+@keyframes shineSweep {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  20%, 100% {
+    transform: translateX(250%) rotate(25deg);
+  }
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: shineSweep 4.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* 4. メインCTAボタンの呼吸パルス（クリック誘発） */
+@keyframes ctaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 25px rgba(232, 90, 24, 0.35);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 16px 36px rgba(232, 90, 24, 0.55);
+  }
+}
+
+.animate-cta-pulse {
+  animation: ctaPulse 3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.animate-cta-pulse:hover {
+  animation-play-state: paused;
+}
+
+/* 5. スクロール出現アニメーション (Scroll Reveal) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ディレイ調整 */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+
+/* 6. アイコンぽよぽよ揺れ (Bounce Soft) */
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float {
+  animation: floatSubtle 3s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   コンポーネントスタイル
+   ========================================================================== */
+
 /* ヘッダー */
 .header {
   background: rgba(255, 255, 255, 0.98);
@@ -173,7 +296,6 @@ button, input, select, textarea {
   padding: 8px 18px;
   border-radius: var(--radius-full);
   margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.12);
 }
 
 .cabinet-news-flash .news-tag {
@@ -204,12 +326,13 @@ button, input, select, textarea {
 
 .hero-catch .takeout-highlight {
   color: var(--primary);
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   display: inline-block;
   background: linear-gradient(transparent 60%, rgba(232, 90, 24, 0.22) 60%);
+  position: relative;
 }
 
-/* 税率比較カード（テイクアウト1%を主役化） */
+/* 税率比較カード */
 .tax-compare-hero {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -355,15 +478,15 @@ button, input, select, textarea {
   padding: 18px 32px;
   border-radius: var(--radius-full);
   box-shadow: 0 12px 30px rgba(232, 90, 24, 0.35);
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   max-width: 520px;
   margin: 0 auto;
   border: 2px solid #FFA768;
 }
 
 .btn-super-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 36px rgba(232, 90, 24, 0.45);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(232, 90, 24, 0.5);
   background: linear-gradient(135deg, #FFA768 0%, #E85A18 100%);
 }
 
@@ -379,6 +502,14 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.btn-super-cta .btn-arrow-icon {
+  transition: transform 0.25s ease;
+}
+
+.btn-super-cta:hover .btn-arrow-icon {
+  transform: translateX(6px);
 }
 
 .cta-caption {
@@ -492,6 +623,12 @@ button, input, select, textarea {
   align-items: center;
   gap: 12px;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.check-item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .check-icon {
@@ -554,6 +691,11 @@ button, input, select, textarea {
   border-radius: var(--radius-md);
   padding: 20px;
   box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease;
+}
+
+.sol-card:hover {
+  transform: translateY(-3px);
 }
 
 .sol-card-num {

@@ -1,6 +1,6 @@
 /**
  * Meshi Drive (メシドライブ) Meta広告LP スクリプト
- * フォームバリデーション、UIインタラクション、フローティングCTA制御
+ * フォームバリデーション、UIインタラクション、フローティングCTA制御、Scroll Reveal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -52,7 +52,28 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
-  // 3. フォームバリデーション & 送信処理
+  // 3. Scroll Reveal アニメーション (Intersection Observer)
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  if (revealElements.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
+
+  // 4. フォームバリデーション & 送信処理
   const form = document.getElementById('inquiry-form');
   const modal = document.getElementById('completion-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -142,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
               if (!firstErrorElement) firstErrorElement = input;
             }
           } else if (field.type === 'tel') {
-            // 電話番号形式チェック（ハイフン有無両対応・数字10〜11桁）
+            // 電話番号形式チェック（10〜11桁の数字）
             const telClean = val.replace(/[-ー\s]/g, '');
             if (!/^\d{10,11}$/.test(telClean)) {
               isValid = false;
@@ -171,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
       submitBtn.textContent = '送信中...';
 
-      // 送信シミュレーション（実案件ではfetchでバックエンドへ送信）
+      // 送信シミュレーション
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
@@ -195,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
     });
 
-    // モーダル背景クリックでも閉じる
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.classList.remove('active');
