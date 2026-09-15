@@ -1293,3 +1293,165 @@ button, input, select, textarea {
   font-size: 0.75rem;
   color: #71717A;
 }
+
+/* ==========================================================================
+   📱 SPレスポンシブ完全最適化 (横スクロール絶対防止ガード)
+   ========================================================================== */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .cabinet-news-flash {
+    font-size: 12px;
+    padding: 6px 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    line-height: 1.4;
+    box-sizing: border-box;
+  }
+  
+  .hero-catch {
+    font-size: 1.45rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-phrase {
+    display: inline;
+    white-space: normal;
+  }
+
+  .hero-catch .num-highlight {
+    font-size: 2.1rem;
+  }
+
+  .hero-catch .old-num {
+    font-size: 1.4rem;
+  }
+
+  .tax-transformation-card {
+    padding: 16px 10px;
+    margin-bottom: 24px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tax-before-box {
+    padding: 14px 8px;
+  }
+
+  .tax-after-hero {
+    padding: 16px 10px;
+  }
+
+  .tax-after-hero .ta-label {
+    font-size: 13px;
+  }
+
+  .tax-after-hero .ta-rate-num {
+    font-size: 3.4rem;
+  }
+
+  .tax-after-hero .ta-rate-unit {
+    font-size: 1.6rem;
+  }
+
+  .btn-super-cta {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: var(--radius-full);
+    box-sizing: border-box;
+  }
+
+  .btn-super-cta .btn-main {
+    font-size: 1.05rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .btn-super-cta .btn-sub {
+    font-size: 11px;
+  }
+
+  .proven-menu-box {
+    padding: 16px 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .brand-mini-card {
+    padding: 16px 12px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .brand-img-wrapper {
+    height: 160px;
+  }
+
+  .brand-mini-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .big-stats-row {
+    padding: 10px 6px;
+    gap: 6px;
+  }
+
+  .stat-cell .s-label {
+    font-size: 10px;
+  }
+
+  .stat-cell .s-value {
+    font-size: 1.2rem;
+  }
+
+  .brand-note-bottom {
+    font-size: 11px;
+    line-height: 1.5;
+    padding: 10px 8px;
+    border-radius: var(--radius-md);
+  }
+
+  .form-box {
+    padding: 20px 12px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .radio-btn-tile {
+    padding: 10px 8px;
+    font-size: 0.95rem;
+  }
+
+  .floating-bottom-cta {
+    padding: 8px 12px;
+  }
+
+  .floating-cta-text .main-text {
+    font-size: 11px;
+  }
+
+  .floating-cta-text .sub-text {
+    font-size: 10px;
+  }
+
+  .floating-cta-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
