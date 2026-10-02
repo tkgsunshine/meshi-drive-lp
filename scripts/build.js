@@ -91,6 +91,10 @@ if (!fs.existsSync(distJsDir)) fs.mkdirSync(distJsDir, { recursive: true });
 if (!fs.existsSync(distImagesDir)) fs.mkdirSync(distImagesDir, { recursive: true });
 
 fs.writeFileSync(path.join(distDir, 'index.html'), htmlContent, 'utf-8');
+const v1Path = path.join(projectRoot, 'index-v1-tax-focus.html');
+if (fs.existsSync(v1Path)) {
+  fs.writeFileSync(path.join(distDir, 'index-v1-tax-focus.html'), fs.readFileSync(v1Path, 'utf-8'), 'utf-8');
+}
 fs.writeFileSync(path.join(distCssDir, 'style.css'), cssContent, 'utf-8');
 fs.writeFileSync(path.join(distJsDir, 'main.js'), jsContent, 'utf-8');
 if (fs.existsSync(faviconPath)) {

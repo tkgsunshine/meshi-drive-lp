@@ -280,14 +280,170 @@ button, input, select, textarea {
   letter-spacing: 0.5px;
 }
 
-/* ヒーローセクション (1st View) */
-.hero-section {
-  background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
-  padding-top: 32px;
-  padding-bottom: 44px;
+/* Meta広告クリエイティブ連動ヒーロー */
+.target-lead-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFF7ED;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 900;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+}
+
+.target-lead-badge .lead-tag {
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
+
+.hero-creative-catch {
+  margin-bottom: 28px;
   text-align: center;
 }
 
+.hero-pain-title {
+  display: block;
+  font-size: 2.85rem;
+  font-weight: 950;
+  line-height: 1.25;
+  color: var(--dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.hero-pain-title .highlight-red {
+  color: #DC2626;
+  background: linear-gradient(transparent 70%, #FEE2E2 70%);
+}
+
+.hero-solve-subtitle {
+  display: block;
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* クリエイティブ2連動: 3大原因ボックス */
+.pain-causes-box {
+  background: #FFFFFF;
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 840px;
+  margin: 0 auto 32px;
+  box-shadow: var(--shadow-md);
+  text-align: left;
+}
+
+.pain-causes-header {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.pain-causes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.pain-cause-card {
+  background: #FAFAFA;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.pain-cause-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-border);
+}
+
+.pain-cause-card .cause-num {
+  font-size: 13px;
+  font-weight: 900;
+  color: #DC2626;
+  background: #FEE2E2;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.pain-cause-card strong {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.35;
+}
+
+.pain-cause-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.pain-causes-footer {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--dark);
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-strong);
+  line-height: 1.6;
+}
+
+.pain-causes-footer strong {
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+/* 2ブロック目: 消費税1%追い風セクション */
+.tax-timing-section {
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tax-timing-hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.tax-timing-catch {
+  font-size: 1.85rem;
+  font-weight: 950;
+  color: var(--dark);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.tax-timing-highlight {
+  display: block;
+  font-size: 1.45rem;
+  color: var(--primary);
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+/* 従来のヒーロー用スタイル（v1互換用） */
 .hero-catch {
   font-size: 2.55rem;
   font-weight: 900;
@@ -1318,6 +1474,56 @@ html, body {
     box-sizing: border-box !important;
   }
   
+  .target-lead-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+
+  .hero-pain-title {
+    font-size: 1.85rem;
+    line-height: 1.3;
+  }
+
+  .hero-solve-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.45;
+  }
+
+  .pain-causes-box {
+    padding: 18px 12px;
+  }
+
+  .pain-causes-header {
+    font-size: 1.05rem;
+  }
+
+  .pain-causes-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .pain-causes-footer {
+    font-size: 0.95rem;
+  }
+
+  .pain-causes-footer strong {
+    font-size: 1.05rem;
+  }
+
+  .tax-timing-catch {
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
+
+  .tax-timing-highlight {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
   .cabinet-news-flash {
     font-size: 12px;
     padding: 6px 12px;
