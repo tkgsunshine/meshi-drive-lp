@@ -280,6 +280,15 @@ button, input, select, textarea {
   letter-spacing: 0.5px;
 }
 
+/* ヒーローセクション (1st View) */
+.hero-section {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
+  padding-top: 56px;
+  padding-bottom: 60px;
+  text-align: center;
+  position: relative;
+}
+
 /* Meta広告クリエイティブ連動ヒーロー: ドラマチック＆高転換デザイン */
 .hero-target-chip {
   display: inline-flex;
@@ -1525,6 +1534,11 @@ html, body {
     padding: 0 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+  }
+
+  .hero-section {
+    padding-top: 36px;
+    padding-bottom: 40px;
   }
   
   .hero-target-chip {
