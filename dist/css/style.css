@@ -280,57 +280,110 @@ button, input, select, textarea {
   letter-spacing: 0.5px;
 }
 
-/* Meta広告クリエイティブ連動ヒーロー */
-.target-lead-badge {
+/* Meta広告クリエイティブ連動ヒーロー: ドラマチック＆高転換デザイン */
+.hero-target-chip {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background: #FFF7ED;
-  border: 2px solid var(--primary);
+  border: 1.5px solid var(--primary-border);
   color: var(--primary);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   padding: 6px 18px;
   border-radius: var(--radius-full);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(232, 90, 24, 0.08);
 }
 
-.target-lead-badge .lead-tag {
+.hero-target-chip .chip-badge {
   background: var(--primary);
-  color: #fff;
+  color: #FFFFFF;
   font-size: 11px;
   padding: 3px 10px;
   border-radius: var(--radius-full);
   letter-spacing: 0.5px;
 }
 
+.hero-target-chip .chip-desc {
+  color: var(--text-main);
+  font-weight: 800;
+}
+
 .hero-creative-catch {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   text-align: center;
 }
 
-.hero-pain-title {
-  display: block;
-  font-size: 2.85rem;
-  font-weight: 950;
-  line-height: 1.25;
-  color: var(--dark);
+.hero-pain-headline {
+  margin: 0 auto 20px;
+  max-width: 960px;
+  line-height: 1.28;
   letter-spacing: -0.03em;
-  margin-bottom: 12px;
 }
 
-.hero-pain-title .highlight-red {
-  color: #DC2626;
-  background: linear-gradient(transparent 70%, #FEE2E2 70%);
-}
-
-.hero-solve-subtitle {
+.hero-pain-headline .pain-pre {
   display: block;
-  font-size: 1.55rem;
-  font-weight: 900;
+  font-size: 2.75rem;
+  font-weight: 950;
+  color: var(--dark);
+  margin-bottom: 6px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.hero-pain-headline .pain-core {
+  display: inline-block;
+  font-size: 3.9rem;
+  font-weight: 950;
   color: var(--primary);
+  position: relative;
+  background: linear-gradient(transparent 70%, #FED7AA 70%);
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+.hero-pain-headline .pain-period {
+  color: var(--primary);
+}
+
+/* 解決策ストリップ（安心感・専門性のあるピルコンテナ） */
+.hero-solution-strip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+  border: 2px solid var(--primary-border);
+  border-radius: var(--radius-full);
+  padding: 10px 24px;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(232, 90, 24, 0.12);
+}
+
+.hero-solution-strip .strip-pill {
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.hero-solution-strip .strip-copy {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0;
   line-height: 1.4;
-  letter-spacing: -0.01em;
+}
+
+.hero-solution-strip .strip-copy strong {
+  color: var(--primary);
+  font-weight: 900;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 1px;
 }
 
 /* クリエイティブ2連動: 3大原因ボックス */
@@ -1474,22 +1527,39 @@ html, body {
     box-sizing: border-box !important;
   }
   
-  .target-lead-badge {
-    font-size: 12px;
-    padding: 6px 12px;
+  .hero-target-chip {
+    font-size: 11px;
+    padding: 5px 12px;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 100%;
     line-height: 1.4;
+    margin-bottom: 16px;
   }
 
-  .hero-pain-title {
-    font-size: 1.85rem;
+  .hero-pain-headline .pain-pre {
+    font-size: 1.65rem;
     line-height: 1.3;
   }
 
-  .hero-solve-subtitle {
-    font-size: 1.15rem;
+  .hero-pain-headline .pain-core {
+    font-size: 2.85rem;
+    line-height: 1.2;
+    padding: 0 4px;
+  }
+
+  .hero-solution-strip {
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 16px;
+    padding: 12px 14px;
+    margin: 0 auto 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-solution-strip .strip-copy {
+    font-size: 1.05rem;
     line-height: 1.45;
   }
 
