@@ -283,7 +283,7 @@ button, input, select, textarea {
 /* ヒーローセクション (1st View) */
 .hero-section {
   background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
-  padding-top: 56px;
+  padding-top: 72px;
   padding-bottom: 60px;
   text-align: center;
   position: relative;
@@ -293,30 +293,30 @@ button, input, select, textarea {
 .hero-target-chip {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: #FFF7ED;
-  border: 1.5px solid var(--primary-border);
+  border: 1px solid var(--primary-border);
   color: var(--primary);
-  font-size: 13px;
-  font-weight: 900;
-  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px 4px 5px;
   border-radius: var(--radius-full);
-  margin-bottom: 22px;
-  box-shadow: 0 2px 8px rgba(232, 90, 24, 0.08);
+  margin-bottom: 28px;
 }
 
 .hero-target-chip .chip-badge {
   background: var(--primary);
   color: #FFFFFF;
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 9px;
   border-radius: var(--radius-full);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 .hero-target-chip .chip-desc {
-  color: var(--text-main);
-  font-weight: 800;
+  color: var(--text-muted);
+  font-weight: 700;
 }
 
 .hero-creative-catch {
@@ -325,30 +325,35 @@ button, input, select, textarea {
 }
 
 .hero-pain-headline {
-  margin: 0 auto 20px;
+  margin: 0 auto 26px;
   max-width: 960px;
-  line-height: 1.28;
-  letter-spacing: -0.03em;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
+/* 1行目は細めの落ち着いた太さ、2行目の「売れない。」だけを強調して強弱をつける。
+   句読点の右側の空きで左に寄って見えるため、左パディングで見た目の中央に補正する */
 .hero-pain-headline .pain-pre {
   display: block;
-  font-size: 2.75rem;
-  font-weight: 950;
-  color: var(--dark);
-  margin-bottom: 6px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #3F3F46;
+  margin-bottom: 4px;
+  padding-left: 0.5em;
 }
 
 .hero-pain-headline .pain-core {
   display: inline-block;
-  font-size: 3.9rem;
-  font-weight: 950;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.25;
   color: var(--primary);
-  position: relative;
-  background: linear-gradient(transparent 70%, #FED7AA 70%);
-  padding: 0 8px;
-  border-radius: 4px;
+  padding-left: 0.4em;
+}
+
+.hero-pain-headline .pain-word {
+  background: linear-gradient(transparent 74%, #FED7AA 74%);
+  padding: 0 4px;
 }
 
 .hero-pain-headline .pain-period {
@@ -381,18 +386,21 @@ button, input, select, textarea {
 }
 
 .hero-solution-strip .strip-copy {
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--dark);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .hero-solution-strip .strip-copy strong {
   color: var(--primary);
-  font-weight: 900;
+  font-weight: 800;
   border-bottom: 2px solid var(--primary);
   padding-bottom: 1px;
+  white-space: nowrap;
 }
 
 /* クリエイティブ2連動: 3大原因ボックス */
@@ -1537,29 +1545,33 @@ html, body {
   }
 
   .hero-section {
-    padding-top: 36px;
+    padding-top: 52px;
     padding-bottom: 40px;
   }
   
   .hero-target-chip {
     font-size: 11px;
-    padding: 5px 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    padding: 6px 16px;
+    border-radius: 14px;
     max-width: 100%;
     line-height: 1.4;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
+  }
+
+  .hero-target-chip .chip-badge {
+    font-size: 10px;
   }
 
   .hero-pain-headline .pain-pre {
-    font-size: 1.65rem;
-    line-height: 1.3;
+    font-size: 1.4rem;
+    line-height: 1.35;
   }
 
   .hero-pain-headline .pain-core {
-    font-size: 2.85rem;
+    font-size: 2.45rem;
     line-height: 1.2;
-    padding: 0 4px;
   }
 
   .hero-solution-strip {
@@ -1573,8 +1585,8 @@ html, body {
   }
 
   .hero-solution-strip .strip-copy {
-    font-size: 1.05rem;
-    line-height: 1.45;
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .pain-causes-box {
