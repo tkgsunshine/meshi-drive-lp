@@ -1970,3 +1970,41 @@ html, body {
   }
 }
 
+/* 語りかけコピー用 */
+.hero-empathy {
+  margin: 4px auto 0;
+  max-width: 640px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #D4D4D8;
+}
+
+.section-headline .section-lead {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 4px 0 6px;
+}
+
+.section-headline .section-sub {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .hero-empathy {
+    font-size: 0.95rem;
+  }
+}
+
+/* 見出しの折り返しで1〜2文字だけ孤立しないようにする */
+.tax-timing-catch,
+.section-headline h2,
+.hero-empathy {
+  text-wrap: balance;
+}
+
