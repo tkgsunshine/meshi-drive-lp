@@ -224,3 +224,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// 4. PROVEN BRAND: スクロールに合わせて背景が白から黒へ反転（逆暗転）
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.getElementById('proven-brand');
+  if (!section) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ticking = false;
+
+  const update = () => {
+    ticking = false;
+    const vh = window.innerHeight;
+    const top = section.getBoundingClientRect().top;
+    // セクションの上端が画面の85%の位置に来たら開始、25%の位置で完全に黒
+    const start = vh * 0.85;
+    const end = vh * 0.25;
+    let p = (start - top) / (start - end);
+    p = Math.max(0, Math.min(1, p));
+    if (reduceMotion) p = p > 0.5 ? 1 : 0;
+    section.style.setProperty('--inv', p.toFixed(3));
+    // 文字色は p=0.5 付近（背景が灰色の区間）で素早く白に切り替える
+    const t = Math.max(0, Math.min(1, (p - 0.47) / 0.06));
+    section.style.setProperty('--inv-t', t.toFixed(3));
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+});
+

@@ -1938,3 +1938,88 @@ html, body {
 .hero-section .cta-caption {
   color: #A1A1AA;
 }
+
+/* ==========================================================================
+   PROVEN BRAND: スクロールに合わせて白 -> 黒へ「逆暗転」する
+   --inv（0〜1）は js/main.js がスクロール位置から設定する。
+   色の補間（color-mix）に未対応のブラウザでは、従来の明るい見た目のまま。
+   ========================================================================== */
+@supports (color: color-mix(in srgb, red 50%, blue)) {
+  .proven-section {
+    --inv: 0;
+    /* 文字色は背景の中間（灰色）で読みづらくならないよう、中間付近で素早く切り替える */
+    --inv-t: 0;
+    --pv-bg: color-mix(in srgb, #101012 calc(var(--inv) * 100%), #FFF9F5);
+    --pv-text: color-mix(in srgb, #FFFFFF calc(var(--inv-t) * 100%), #18181B);
+    --pv-muted: color-mix(in srgb, #A1A1AA calc(var(--inv-t) * 100%), #52525B);
+    --pv-box: color-mix(in srgb, #18181B calc(var(--inv) * 100%), #FFF9F5);
+    --pv-box-border: color-mix(in srgb, #3F3F46 calc(var(--inv) * 100%), #FDBA74);
+    --pv-card: color-mix(in srgb, #222226 calc(var(--inv) * 100%), #FFFFFF);
+    --pv-card-border: color-mix(in srgb, #3F3F46 calc(var(--inv) * 100%), #E4E4E7);
+    --pv-chip: color-mix(in srgb, #2E2E33 calc(var(--inv) * 100%), #FDFBF7);
+    --pv-chip-border: color-mix(in srgb, #52525B calc(var(--inv) * 100%), #D4D4D8);
+    --pv-goal: color-mix(in srgb, #2B1A10 calc(var(--inv) * 100%), #FFF4ED);
+    background-color: var(--pv-bg) !important;
+  }
+
+  .proven-section .section-headline h2 {
+    color: var(--pv-text);
+  }
+
+  .proven-section .proven-menu-box {
+    background: var(--pv-box);
+    border-color: var(--pv-box-border);
+  }
+
+  .proven-section .brand-mini-card {
+    background: var(--pv-card);
+    border-color: var(--pv-card-border);
+  }
+
+  .proven-section .brand-mini-card h3 {
+    color: var(--pv-text);
+  }
+
+  .proven-section .brand-img-wrapper {
+    background-color: var(--pv-chip);
+  }
+
+  .proven-section .brand-menu-tags span {
+    background: var(--pv-chip);
+    border-color: var(--pv-chip-border);
+    color: var(--pv-text);
+  }
+
+  .proven-section .big-stats-row {
+    background: var(--pv-chip);
+  }
+
+  .proven-section .stat-cell .s-label {
+    color: var(--pv-muted);
+  }
+
+  .proven-section .brand-note-bottom {
+    background: var(--pv-card);
+    border-color: var(--pv-box-border);
+    color: var(--pv-text);
+  }
+
+  .proven-section .step-h-card {
+    background: var(--pv-card);
+    border-color: var(--pv-box-border);
+  }
+
+  .proven-section .step-h-card.is-goal {
+    background: var(--pv-goal);
+    border-color: var(--primary);
+  }
+
+  .proven-section .step-h-card .step-txt {
+    color: var(--pv-text);
+  }
+
+  .proven-section .step-h-card .step-sub {
+    color: var(--pv-muted);
+  }
+}
+
