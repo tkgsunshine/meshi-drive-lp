@@ -150,13 +150,12 @@ button, input, select, textarea {
   pointer-events: none;
 }
 
+/* 拡大縮小すると文字が一瞬ぼやけるため、影のふくらみだけで脈動させる */
 @keyframes ctaPulse {
   0%, 100% {
-    transform: scale(1);
     box-shadow: 0 10px 25px rgba(232, 90, 24, 0.35);
   }
   50% {
-    transform: scale(1.03);
     box-shadow: 0 16px 36px rgba(232, 90, 24, 0.55);
   }
 }
@@ -283,7 +282,7 @@ button, input, select, textarea {
 /* ヒーローセクション (1st View) */
 .hero-section {
   background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
-  padding-top: 56px;
+  padding-top: 52px;
   padding-bottom: 60px;
   text-align: center;
   position: relative;
@@ -293,30 +292,30 @@ button, input, select, textarea {
 .hero-target-chip {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: #FFF7ED;
-  border: 1.5px solid var(--primary-border);
+  border: 1px solid var(--primary-border);
   color: var(--primary);
-  font-size: 13px;
-  font-weight: 900;
-  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px 4px 5px;
   border-radius: var(--radius-full);
-  margin-bottom: 22px;
-  box-shadow: 0 2px 8px rgba(232, 90, 24, 0.08);
+  margin-bottom: 28px;
 }
 
 .hero-target-chip .chip-badge {
   background: var(--primary);
   color: #FFFFFF;
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 9px;
   border-radius: var(--radius-full);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 .hero-target-chip .chip-desc {
-  color: var(--text-main);
-  font-weight: 800;
+  color: var(--text-muted);
+  font-weight: 700;
 }
 
 .hero-creative-catch {
@@ -325,30 +324,35 @@ button, input, select, textarea {
 }
 
 .hero-pain-headline {
-  margin: 0 auto 20px;
+  margin: 0 auto 26px;
   max-width: 960px;
-  line-height: 1.28;
-  letter-spacing: -0.03em;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
+/* 1行目は細めの落ち着いた太さ、2行目の「売れない。」だけを強調して強弱をつける。
+   句読点の右側の空きで左に寄って見えるため、左パディングで見た目の中央に補正する */
 .hero-pain-headline .pain-pre {
   display: block;
-  font-size: 2.75rem;
-  font-weight: 950;
-  color: var(--dark);
-  margin-bottom: 6px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #3F3F46;
+  margin-bottom: 4px;
+  padding-left: 0.5em;
 }
 
 .hero-pain-headline .pain-core {
   display: inline-block;
-  font-size: 3.9rem;
-  font-weight: 950;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.25;
   color: var(--primary);
-  position: relative;
-  background: linear-gradient(transparent 70%, #FED7AA 70%);
-  padding: 0 8px;
-  border-radius: 4px;
+  padding-left: 0.4em;
+}
+
+.hero-pain-headline .pain-word {
+  background: linear-gradient(transparent 74%, #FED7AA 74%);
+  padding: 0 4px;
 }
 
 .hero-pain-headline .pain-period {
@@ -381,18 +385,21 @@ button, input, select, textarea {
 }
 
 .hero-solution-strip .strip-copy {
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--dark);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .hero-solution-strip .strip-copy strong {
   color: var(--primary);
-  font-weight: 900;
+  font-weight: 800;
   border-bottom: 2px solid var(--primary);
   padding-bottom: 1px;
+  white-space: nowrap;
 }
 
 /* クリエイティブ2連動: 3大原因ボックス */
@@ -420,6 +427,11 @@ button, input, select, textarea {
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-bottom: 16px;
+}
+
+/* フッター文を外したため、最後のグリッドの下余白は不要 */
+.pain-causes-grid:last-child {
+  margin-bottom: 0;
 }
 
 .pain-cause-card {
@@ -721,8 +733,9 @@ button, input, select, textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #FF6B18 0%, #E85A18 100%);
+  background: linear-gradient(135deg, #F46419 0%, #DB5112 100%);
   color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
   padding: 18px 32px;
   border-radius: var(--radius-full);
   box-shadow: 0 12px 30px rgba(232, 90, 24, 0.35);
@@ -739,14 +752,20 @@ button, input, select, textarea {
 }
 
 .btn-super-cta .btn-sub {
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  margin-bottom: 3px;
+  text-shadow: 0 1px 2px rgba(120, 40, 0, 0.35);
 }
 
 .btn-super-cta .btn-main {
   font-size: 1.35rem;
-  font-weight: 900;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(120, 40, 0, 0.3);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1104,40 +1123,78 @@ button, input, select, textarea {
   border: 1px solid var(--primary-border);
 }
 
-/* 最短3週間の導入ステップ */
+/* 最短3週間の導入ステップ: 番号の円 + カード間の矢印で「順番に進む流れ」を見せる */
 .step-horizontal-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 32px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-@media (max-width: 640px) {
-  .step-horizontal-row {
-    grid-template-columns: 1fr;
-  }
-}
-
 .step-h-card {
+  position: relative;
   background: #FFFFFF;
-  border-top: 5px solid var(--primary);
-  border-radius: var(--radius-sm);
-  padding: 20px 16px;
+  border: 1.5px solid var(--primary-border);
+  border-radius: var(--radius-md);
+  padding: 16px 14px 20px;
   text-align: center;
   box-shadow: var(--shadow-sm);
 }
 
+/* カード間の矢印（右向き） */
+.step-h-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -23px;
+  width: 14px;
+  height: 14px;
+  border-top: 4px solid var(--primary);
+  border-right: 4px solid var(--primary);
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+/* ゴール（販売開始）は色付きで強調 */
+.step-h-card.is-goal {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  box-shadow: 0 6px 16px var(--primary-shadow);
+}
+
 .step-h-card .step-idx {
-  font-size: 13px;
-  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.step-h-card .step-word {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   color: var(--primary);
-  margin-bottom: 4px;
+}
+
+.step-h-card .step-no {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 4px 10px var(--primary-shadow);
 }
 
 .step-h-card .step-txt {
   font-size: 1.15rem;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--dark);
   margin-bottom: 4px;
 }
@@ -1146,6 +1203,35 @@ button, input, select, textarea {
   font-size: 12px;
   color: var(--text-muted);
   font-weight: 700;
+}
+
+/* スマホ: 番号を左に置いた縦の流れ（下向き矢印でつなぐ） */
+@media (max-width: 640px) {
+  .step-horizontal-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .step-h-card {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    padding: 14px 16px;
+  }
+
+  .step-h-card .step-idx {
+    margin-bottom: 0;
+  }
+
+  .step-h-card:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    left: 44px;
+    bottom: -23px;
+    transform: translateX(-50%) rotate(135deg);
+  }
 }
 
 .speed-tag-banner {
@@ -1181,6 +1267,19 @@ button, input, select, textarea {
 .form-header-title {
   text-align: center;
   margin-bottom: 24px;
+}
+
+.form-header-title .badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  padding: 4px 14px 4px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 10px;
+  box-shadow: 0 3px 8px var(--primary-shadow);
 }
 
 .form-header-title h3 {
@@ -1537,29 +1636,33 @@ html, body {
   }
 
   .hero-section {
-    padding-top: 36px;
+    padding-top: 40px;
     padding-bottom: 40px;
   }
   
   .hero-target-chip {
     font-size: 11px;
-    padding: 5px 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    padding: 6px 16px;
+    border-radius: 14px;
     max-width: 100%;
     line-height: 1.4;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
+  }
+
+  .hero-target-chip .chip-badge {
+    font-size: 10px;
   }
 
   .hero-pain-headline .pain-pre {
-    font-size: 1.65rem;
-    line-height: 1.3;
+    font-size: 1.4rem;
+    line-height: 1.35;
   }
 
   .hero-pain-headline .pain-core {
-    font-size: 2.85rem;
+    font-size: 2.45rem;
     line-height: 1.2;
-    padding: 0 4px;
   }
 
   .hero-solution-strip {
@@ -1573,8 +1676,8 @@ html, body {
   }
 
   .hero-solution-strip .strip-copy {
-    font-size: 1.05rem;
-    line-height: 1.45;
+    font-size: 1rem;
+    line-height: 1.55;
   }
 
   .pain-causes-box {
@@ -1683,7 +1786,7 @@ html, body {
   }
 
   .btn-super-cta .btn-sub {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .proven-menu-box {
@@ -1754,3 +1857,154 @@ html, body {
     font-size: 12px;
   }
 }
+
+/* ==========================================================================
+   1stビュー（ヒーロー）: 黒背景（広告クリエイティブ準拠）
+   次のセクション（消費税の追い風）から白背景に切り替わる
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(180deg, #18181B 0%, #101012 100%);
+  color: #FFFFFF;
+}
+
+.hero-section .hero-target-chip {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.hero-section .hero-target-chip .chip-desc {
+  color: #D4D4D8;
+}
+
+.hero-section .hero-pain-headline .pain-pre {
+  color: #FFFFFF;
+}
+
+.hero-section .hero-pain-headline .pain-word {
+  background: none;
+}
+
+.hero-section .hero-solution-strip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(232, 90, 24, 0.7);
+  box-shadow: none;
+}
+
+.hero-section .hero-solution-strip .strip-copy {
+  color: #FFFFFF;
+}
+
+.hero-section .hero-solution-strip .strip-copy strong {
+  color: #FF7A33;
+  border-bottom-color: #FF7A33;
+}
+
+.hero-section .pain-causes-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.hero-section .pain-causes-header {
+  color: #FFFFFF;
+}
+
+.hero-section .pain-cause-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero-section .pain-cause-card:hover {
+  border-color: var(--primary);
+}
+
+.hero-section .pain-cause-card .cause-num {
+  color: #FF8A47;
+  background: rgba(232, 90, 24, 0.2);
+}
+
+.hero-section .pain-cause-card strong {
+  color: #FFFFFF;
+}
+
+.hero-section .pain-cause-card p {
+  color: #A1A1AA;
+}
+
+.hero-section .pain-causes-footer {
+  color: #FFFFFF;
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-section .pain-causes-footer strong {
+  color: #FF7A33;
+}
+
+.hero-section .cta-caption {
+  color: #A1A1AA;
+}
+
+/* ヒーロー最下部は「よくある原因」の枠で終わる（CTAはSOLUTION最下部へ移動）。余白の二重取りを避ける */
+.hero-section .pain-causes-box {
+  margin-bottom: 0;
+}
+
+/* サービス全体の位置づけラベル: 中央揃えの見出しとは切り離し、左上に置く */
+.service-tag-row {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.service-tag-row .hero-target-chip {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .service-tag-row {
+    margin-bottom: 24px;
+  }
+
+  .service-tag-row .hero-target-chip {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* 語りかけコピー用 */
+.hero-empathy {
+  margin: 4px auto 0;
+  max-width: 640px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #D4D4D8;
+}
+
+.section-headline .section-lead {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 4px 0 6px;
+}
+
+.section-headline .section-sub {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .hero-empathy {
+    font-size: 0.95rem;
+  }
+}
+
+/* 見出しの折り返しで1〜2文字だけ孤立しないようにする */
+.tax-timing-catch,
+.section-headline h2,
+.hero-empathy {
+  text-wrap: balance;
+}
+
