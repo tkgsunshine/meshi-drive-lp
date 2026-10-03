@@ -1852,3 +1852,89 @@ html, body {
     font-size: 12px;
   }
 }
+
+/* ==========================================================================
+   1stビュー（ヒーロー）: 黒背景（広告クリエイティブ準拠）
+   次のセクション（消費税の追い風）から白背景に切り替わる
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(180deg, #18181B 0%, #101012 100%);
+  color: #FFFFFF;
+}
+
+.hero-section .hero-target-chip {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.hero-section .hero-target-chip .chip-desc {
+  color: #D4D4D8;
+}
+
+.hero-section .hero-pain-headline .pain-pre {
+  color: #FFFFFF;
+}
+
+.hero-section .hero-pain-headline .pain-word {
+  background: none;
+}
+
+.hero-section .hero-solution-strip {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(232, 90, 24, 0.7);
+  box-shadow: none;
+}
+
+.hero-section .hero-solution-strip .strip-copy {
+  color: #FFFFFF;
+}
+
+.hero-section .hero-solution-strip .strip-copy strong {
+  color: #FF7A33;
+  border-bottom-color: #FF7A33;
+}
+
+.hero-section .pain-causes-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.hero-section .pain-causes-header {
+  color: #FFFFFF;
+}
+
+.hero-section .pain-cause-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero-section .pain-cause-card:hover {
+  border-color: var(--primary);
+}
+
+.hero-section .pain-cause-card .cause-num {
+  color: #FF8A47;
+  background: rgba(232, 90, 24, 0.2);
+}
+
+.hero-section .pain-cause-card strong {
+  color: #FFFFFF;
+}
+
+.hero-section .pain-cause-card p {
+  color: #A1A1AA;
+}
+
+.hero-section .pain-causes-footer {
+  color: #FFFFFF;
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-section .pain-causes-footer strong {
+  color: #FF7A33;
+}
+
+.hero-section .cta-caption {
+  color: #A1A1AA;
+}
