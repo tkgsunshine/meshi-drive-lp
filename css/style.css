@@ -283,7 +283,7 @@ button, input, select, textarea {
 /* ヒーローセクション (1st View) */
 .hero-section {
   background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-page) 100%);
-  padding-top: 72px;
+  padding-top: 52px;
   padding-bottom: 60px;
   text-align: center;
   position: relative;
@@ -1545,7 +1545,7 @@ html, body {
   }
 
   .hero-section {
-    padding-top: 52px;
+    padding-top: 40px;
     padding-bottom: 40px;
   }
   
