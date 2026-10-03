@@ -1943,3 +1943,9 @@ html, body {
 .hero-section .cta-caption {
   color: #A1A1AA;
 }
+
+/* ヒーロー最下部は「よくある原因」の枠で終わる（CTAはSOLUTION最下部へ移動）。余白の二重取りを避ける */
+.hero-section .pain-causes-box {
+  margin-bottom: 0;
+}
+
