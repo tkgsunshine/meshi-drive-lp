@@ -429,6 +429,11 @@ button, input, select, textarea {
   margin-bottom: 16px;
 }
 
+/* フッター文を外したため、最後のグリッドの下余白は不要 */
+.pain-causes-grid:last-child {
+  margin-bottom: 0;
+}
+
 .pain-cause-card {
   background: #FAFAFA;
   border: 1px solid var(--border-subtle);
