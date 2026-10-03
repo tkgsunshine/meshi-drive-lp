@@ -1949,3 +1949,24 @@ html, body {
   margin-bottom: 0;
 }
 
+/* サービス全体の位置づけラベル: 中央揃えの見出しとは切り離し、左上に置く */
+.service-tag-row {
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.service-tag-row .hero-target-chip {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .service-tag-row {
+    margin-bottom: 24px;
+  }
+
+  .service-tag-row .hero-target-chip {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
