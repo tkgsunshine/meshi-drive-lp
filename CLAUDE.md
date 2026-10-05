@@ -10,3 +10,4 @@ Antigravity(AG)から Claude Code(CC)へ引き継ぎ済み。今後の開発はC
 - **お悩み訴求が先の版（現行）:** ヒーロー見出し「Uber Eatsを始めたけど、売れない。」。`322c2c1` で導入。
 - **消費税訴求が先の版（採用候補・保存済み）:** ヒーロー見出し「テイクアウト・デリバリーの消費税が 10% ➔ 1% へ。」。ブランチ `claude/archive-lp-v1-tax-first`（コミット `fee0b87`）に保存してある。`index-v1-tax-focus.html`（本番で `/index-v1-tax-focus.html`）にも同じ内容が残っている。
 - どちらを採用するかはユーザーが未決定。決まるまで、両方とも消さない。
+- 開発アイデア: ユーザーが新機能・改善のアイデアを話したら、`.claude/agents/dev-employee.md` の「ホーム」の節に従い、ホームのダッシュボード（https://claude.ai/artifact/9eu8jRktA8nGCC8HKN7L8A）の `ideas` に保存する（実装は依頼があるまでしない）。
