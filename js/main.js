@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
       { name: 'takeout_status', label: '現在のテイクアウト', type: 'radio' },
       { name: 'delivery_status', label: '現在のデリバリー', type: 'radio' },
       { name: 'ubereats_status', label: 'Uber Eats等の利用状況', type: 'radio' },
-      { id: 'email', name: '返信先（メアド）', type: 'email' },
-      { id: 'phone', name: '返信先（電話番号）', type: 'tel' }
+      { id: 'email', name: 'メールアドレス（返信先）', type: 'email' },
+      { id: 'phone', name: '電話番号（返信先）', type: 'tel' }
     ];
 
     // 入力時のリアルタイムエラークリア
