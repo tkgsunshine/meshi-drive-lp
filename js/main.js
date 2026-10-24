@@ -221,10 +221,11 @@ document.addEventListener('DOMContentLoaded', () => {
       fetch(SSGFORM_ENDPOINT, {
         method: 'POST',
         body: formData,
-        headers: { 'Accept': 'application/json' }
+        // 送信成功時、SSGformは完了ページへリダイレクトする。追うと406になるため追わず、リダイレクトを成功とみなす
+        redirect: 'manual'
       })
         .then(res => {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
+          if (!res.ok && res.type !== 'opaqueredirect') throw new Error('HTTP ' + res.status);
           // 完了モーダル表示
           if (modal) {
             modal.classList.add('active');
