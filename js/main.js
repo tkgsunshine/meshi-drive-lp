@@ -79,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCloseBtn = document.getElementById('modal-close-btn');
 
   if (form) {
+    const SSGFORM_ENDPOINT = 'https://ssgform.com/s/PM2GnhncvUNt';
+
     // 必須項目の定義
     const requiredFields = [
       { id: 'shop_name', name: '店舗名', type: 'text' },
@@ -192,20 +194,51 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
       submitBtn.textContent = '送信中...';
 
-      // 送信シミュレーション
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-        
-        // 完了モーダル表示
-        if (modal) {
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        }
-        
-        // フォームリセット
-        form.reset();
-      }, 900);
+      // SSGformへ送信（通知メール・自動返信はSSGform側の設定）
+      const labels = {
+        shop_name: '店舗名',
+        manager_name: '担当者名',
+        business_type: '業態',
+        shop_area: '店舗エリア',
+        monthly_sales: '月商（万円）',
+        takeout_status: '現在のテイクアウト',
+        delivery_status: '現在のデリバリー',
+        ubereats_status: 'Uber Eats等の利用状況',
+        business_hours: '営業時間',
+        email: 'email',
+        phone: '電話番号',
+        notes: 'ご相談内容・備考'
+      };
+      const formData = new FormData();
+      Object.keys(labels).forEach(name => {
+        const el = form.elements[name];
+        if (!el) return;
+        const value = (el.value !== undefined ? el.value : '').trim();
+        const checked = el.length ? form.querySelector(`input[name="${name}"]:checked`) : null;
+        formData.append(labels[name], checked ? checked.value : value);
+      });
+
+      fetch(SSGFORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          // 完了モーダル表示
+          if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+          form.reset();
+        })
+        .catch(() => {
+          alert('送信できませんでした。お手数ですが、時間をおいてもう一度お試しください。');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        });
     });
   }
 
