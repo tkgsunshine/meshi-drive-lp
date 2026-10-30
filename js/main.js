@@ -226,6 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
         .then(res => {
           if (!res.ok && res.type !== 'opaqueredirect') throw new Error('HTTP ' + res.status);
+          // Meta広告の計測（申し込み完了）
+          if (typeof fbq === 'function') fbq('track', 'Lead');
           // 完了モーダル表示
           if (modal) {
             modal.classList.add('active');
