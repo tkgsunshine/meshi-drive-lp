@@ -4,6 +4,31 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Meta Pixel 行動計測ヘルパー（個人情報・入力値は送らない。送るのは項目名・位置のみ）
+  const sentEvents = {};
+  const track = (name, params, onceKey) => {
+    if (onceKey) {
+      if (sentEvents[onceKey]) return;
+      sentEvents[onceKey] = true;
+    }
+    if (typeof fbq === 'function') fbq('trackCustom', name, params || {});
+  };
+
+  // 広告経由の流入情報（UTM / fbclid）をセッション内で保持
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+  const getAdSource = () => {
+    let saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem('md_ad_source') || '{}'); } catch (e) { /* 保存不可の環境では無視 */ }
+    const query = new URLSearchParams(window.location.search);
+    UTM_KEYS.forEach(key => {
+      const v = query.get(key);
+      if (v) saved[key] = v;
+    });
+    try { sessionStorage.setItem('md_ad_source', JSON.stringify(saved)); } catch (e) { /* 同上 */ }
+    return Object.keys(saved).filter(k => k !== 'fbclid').map(k => `${k}=${saved[k]}`).join(' / ');
+  };
+  const adSource = getAdSource();
+
   // 1. スムーズスクロール制御
   const scrollButtons = document.querySelectorAll('a[href^="#"]');
   scrollButtons.forEach(anchor => {
@@ -180,7 +205,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      track('FormSubmitAttempt');
+
       if (!isValid) {
+        const errorFields = Array.from(form.querySelectorAll('.form-error-msg.visible'))
+          .map(el => el.id.replace(/^err_/, ''))
+          .join(',');
+        track('FormValidationError', { fields: errorFields });
         if (firstErrorElement) {
           firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
           if (firstErrorElement.focus) firstErrorElement.focus();
@@ -218,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append(labels[name], checked ? checked.value : value);
       });
 
+      if (adSource) formData.append('流入元（広告）', adSource);
+
       fetch(SSGFORM_ENDPOINT, {
         method: 'POST',
         body: formData,
@@ -236,12 +269,80 @@ document.addEventListener('DOMContentLoaded', () => {
           form.reset();
         })
         .catch(() => {
+          track('FormSubmitError');
           alert('送信できませんでした。お手数ですが、時間をおいてもう一度お試しください。');
         })
         .finally(() => {
           submitBtn.disabled = false;
           submitBtn.textContent = originalBtnText;
         });
+    });
+  }
+
+  // 5. ユーザー行動の計測（Meta Pixel カスタムイベント）
+  // スクロール深度
+  const scrollMarks = [25, 50, 75, 100];
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrolled = (window.scrollY + window.innerHeight) / doc.scrollHeight * 100;
+    scrollMarks.forEach(mark => {
+      if (scrolled >= mark - 1) track('ScrollDepth', { percent: mark }, `scroll_${mark}`);
+    });
+  }, { passive: true });
+
+  // セクション閲覧（id があれば id、なければ出現順）
+  const trackedSections = document.querySelectorAll('section');
+  if (trackedSections.length > 0 && 'IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const name = el.id || `section_${Array.from(trackedSections).indexOf(el) + 1}`;
+        track('SectionView', { section: name }, `section_${name}`);
+        if (el.id === 'contact-form' && typeof fbq === 'function' && !sentEvents.vc) {
+          sentEvents.vc = true;
+          fbq('track', 'ViewContent', { content_name: 'contact-form' });
+        }
+        sectionObserver.unobserve(el);
+      });
+    }, { threshold: 0.15 });
+    trackedSections.forEach(el => sectionObserver.observe(el));
+  }
+
+  // CTAクリック（どの位置のボタンが押されたか）
+  const inlineCtas = Array.from(document.querySelectorAll('.btn-super-cta'));
+  document.querySelectorAll('a[href="#contact-form"]').forEach(link => {
+    link.addEventListener('click', () => {
+      let location = 'other';
+      if (link.classList.contains('header-cta-btn')) location = 'header';
+      else if (link.classList.contains('floating-cta-btn')) location = 'floating';
+      else if (link.classList.contains('btn-super-cta')) location = `inline_${inlineCtas.indexOf(link) + 1}`;
+      track('CTAClick', { location });
+    });
+  });
+
+  // 滞在時間（表示中のタブのみ）
+  [30, 60].forEach(sec => {
+    setTimeout(() => {
+      if (document.visibilityState === 'visible') track('TimeOnPage', { seconds: sec }, `time_${sec}`);
+    }, sec * 1000);
+  });
+
+  // フォーム: 入力開始・項目ごとの入力完了（値は送らない）
+  if (form) {
+    form.addEventListener('focusin', e => {
+      const name = e.target.id || e.target.name;
+      if (name) track('FormStart', { field: name }, 'form_start');
+    });
+    form.addEventListener('focusout', e => {
+      const el = e.target;
+      const name = el.id || el.name;
+      if (name && el.type !== 'radio' && typeof el.value === 'string' && el.value.trim()) {
+        track('FormFieldComplete', { field: name }, `field_${name}`);
+      }
+    });
+    form.addEventListener('change', e => {
+      if (e.target.type === 'radio') track('FormFieldComplete', { field: e.target.name }, `field_${e.target.name}`);
     });
   }
 
