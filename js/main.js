@@ -85,10 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const requiredFields = [
       { id: 'shop_name', name: '店舗名', type: 'text' },
       { id: 'manager_name', name: '担当者名', type: 'text' },
-      { id: 'shop_area', name: '店舗エリア', type: 'text' },
-      { name: 'takeout_status', label: '現在のテイクアウト', type: 'radio' },
-      { name: 'delivery_status', label: '現在のデリバリー', type: 'radio' },
-      { name: 'ubereats_status', label: 'Uber Eats等の利用状況', type: 'radio' },
       { id: 'email', name: 'メールアドレス（返信先）', type: 'email' },
       { id: 'phone', name: '電話番号（返信先）', type: 'tel' }
     ];
@@ -181,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!isValid) {
+        track('Form_ValidationError');
         if (firstErrorElement) {
           firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
           if (firstErrorElement.focus) firstErrorElement.focus();
@@ -243,6 +240,72 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.textContent = originalBtnText;
         });
     });
+  }
+
+  // 5. 離脱分析用の計測（Meta Pixel カスタムイベント。入力内容は送らず、段階の名前だけ送る）
+  const track = (name, params) => {
+    if (typeof fbq === 'function') fbq('trackCustom', name, params || {});
+  };
+  const sent = {};
+  const once = (name, params) => {
+    if (sent[name]) return;
+    sent[name] = true;
+    track(name, params);
+  };
+
+  // 5-1. スクロール到達率（25/50/75/100%）
+  const depthMarks = [25, 50, 75, 100];
+  const onDepthScroll = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    if (max <= 0) return;
+    const pct = Math.round((window.scrollY / max) * 100);
+    depthMarks.forEach(m => { if (pct >= m) once('Scroll' + m); });
+  };
+  window.addEventListener('scroll', onDepthScroll, { passive: true });
+
+  // 5-2. セクション到達（どこまで読まれたか）
+  const sectionMap = [
+    { sel: '#hero', name: 'View_Hero' },
+    { sel: '.solutions-grid', name: 'View_Solution' },
+    { sel: '.tax-timing-section', name: 'View_WhyNow' },
+    { sel: '.brand-showcase-grid', name: 'View_ProvenBrand' },
+    { sel: '#contact-form', name: 'View_Form' }
+  ];
+  if ('IntersectionObserver' in window) {
+    const secObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          once(entry.target.getAttribute('data-track'));
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    sectionMap.forEach(({ sel, name }) => {
+      const el = document.querySelector(sel);
+      if (el) { el.setAttribute('data-track', name); secObserver.observe(el); }
+    });
+  }
+
+  // 5-3. 滞在時間（10秒・30秒・60秒）
+  [10, 30, 60].forEach(sec => setTimeout(() => once('Stay' + sec + 's'), sec * 1000));
+
+  // 5-4. CTAボタンのクリック
+  document.querySelectorAll('a[href="#contact-form"]').forEach(a => {
+    a.addEventListener('click', () => track('Click_CTA', {
+      place: a.closest('header') ? 'header' : a.closest('#hero') ? 'hero' : a.closest('#floating-cta') ? 'floating' : 'section'
+    }));
+  });
+
+  // 5-5. フォームの入力進捗（どの項目で止まるか）
+  if (form) {
+    form.addEventListener('focusin', (e) => {
+      const t = e.target;
+      if (!t || !t.name) return;
+      once('Form_Start');
+      once('Form_Focus_' + t.name);
+    });
+    form.addEventListener('submit', () => track('Form_SubmitAttempt'));
   }
 
   // モーダルクローズ

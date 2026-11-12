@@ -2008,3 +2008,22 @@ html, body {
   text-wrap: balance;
 }
 
+
+/* 任意項目の折りたたみ（フォーム入力負担の軽減） */
+.form-optional-details {
+  margin: 4px 0 20px;
+  border: 1px dashed #E4E4E7;
+  border-radius: 10px;
+  padding: 0 14px;
+}
+.form-optional-details > summary {
+  cursor: pointer;
+  padding: 14px 0;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--primary);
+}
+.form-optional-details[open] > summary {
+  border-bottom: 1px dashed #E4E4E7;
+  margin-bottom: 16px;
+}
