@@ -85,10 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const requiredFields = [
       { id: 'shop_name', name: '店舗名', type: 'text' },
       { id: 'manager_name', name: '担当者名', type: 'text' },
-      { id: 'shop_area', name: '店舗エリア', type: 'text' },
-      { name: 'takeout_status', label: '現在のテイクアウト', type: 'radio' },
-      { name: 'delivery_status', label: '現在のデリバリー', type: 'radio' },
-      { name: 'ubereats_status', label: 'Uber Eats等の利用状況', type: 'radio' },
       { id: 'email', name: 'メールアドレス（返信先）', type: 'email' },
       { id: 'phone', name: '電話番号（返信先）', type: 'tel' }
     ];
