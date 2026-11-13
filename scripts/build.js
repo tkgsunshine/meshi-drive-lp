@@ -54,7 +54,6 @@ const requiredFields = [
   { name: '現在のテイクアウト（任意）', regex: /name=["']takeout_status["']/s },
   { name: '現在のデリバリー（任意）', regex: /name=["']delivery_status["']/s },
   { name: 'Uber Eats等の利用状況（任意）', regex: /name=["']ubereats_status["']/s },
-  { name: '営業時間（任意）', regex: /id=["']business_hours["']/s },
   { name: '返信先メアド（必須）', regex: /id=["']email["'].*required/s },
   { name: '返信先電話番号（必須）', regex: /id=["']phone["'].*required/s },
   { name: 'その他備考（任意）', regex: /id=["']notes["']/s }

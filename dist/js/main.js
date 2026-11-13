@@ -201,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
         takeout_status: '現在のテイクアウト',
         delivery_status: '現在のデリバリー',
         ubereats_status: 'Uber Eats等の利用状況',
-        business_hours: '営業時間',
         email: 'email',
         phone: '電話番号',
         notes: 'ご相談内容・備考'
