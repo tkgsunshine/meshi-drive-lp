@@ -66,8 +66,8 @@ for (const field of requiredFields) {
 
 // 4. トンマナ・コピーチェック
 reportCheck('Orange tone colors defined in CSS', /--primary:\s*#E85A18/.test(cssContent));
-reportCheck('Takeout & Delivery tax rate emphasized', htmlContent.includes('テイクアウト・デリバリー') && htmlContent.includes('1%'));
-reportCheck('Non-assertion rule followed (可能性があります)', htmlContent.includes('可能性があります'));
+reportCheck('Pain-first hero headline (Uber Eatsを始めたけど、売れない)', htmlContent.includes('Uber Eatsを始めたけど、') && htmlContent.includes('売れない'));
+reportCheck('No tax-policy claims on main LP (kept in index-v1-tax-focus.html)', !htmlContent.includes('閣議決定') && !htmlContent.includes('消費税'));
 reportCheck('No service price numbers shown in LP', !htmlContent.includes('20,000円') && !htmlContent.includes('月額2万'));
 reportCheck('No automated score diagnosis in LP', !htmlContent.includes('78点') && !htmlContent.includes('AI診断'));
 reportCheck('Proven brand case: 豚丼ジャンクキング / 豚キムチ / 生姜野郎', htmlContent.includes('豚丼ジャンクキング') && htmlContent.includes('生姜野郎'));
