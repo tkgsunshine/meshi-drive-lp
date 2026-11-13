@@ -95,6 +95,10 @@ const v1Path = path.join(projectRoot, 'index-v1-tax-focus.html');
 if (fs.existsSync(v1Path)) {
   fs.writeFileSync(path.join(distDir, 'index-v1-tax-focus.html'), fs.readFileSync(v1Path, 'utf-8'), 'utf-8');
 }
+const ghostPath = path.join(projectRoot, 'index-ghost.html');
+if (fs.existsSync(ghostPath)) {
+  fs.writeFileSync(path.join(distDir, 'index-ghost.html'), fs.readFileSync(ghostPath, 'utf-8'), 'utf-8');
+}
 fs.writeFileSync(path.join(distCssDir, 'style.css'), cssContent, 'utf-8');
 fs.writeFileSync(path.join(distJsDir, 'main.js'), jsContent, 'utf-8');
 if (fs.existsSync(faviconPath)) {
