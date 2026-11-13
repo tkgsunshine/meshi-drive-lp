@@ -1970,6 +1970,31 @@ html, body {
   }
 }
 
+/* ヒーロー: 初期費用0円キャンペーンのバッジ */
+.hero-campaign-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 14px;
+  padding: 6px 16px 6px 6px;
+  background: #FFF4ED;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-full);
+  color: var(--primary-active);
+  font-size: 1.1rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.hero-campaign-badge .hcb-label {
+  padding: 5px 12px;
+  background: var(--primary);
+  border-radius: var(--radius-full);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
 /* 語りかけコピー用 */
 .hero-empathy {
   margin: 4px auto 0;
