@@ -37,11 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (floatingCta && heroSection && formSection) {
     const handleScroll = () => {
       const heroBottom = heroSection.getBoundingClientRect().bottom;
-      const formTop = formSection.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
 
-      // ヒーローを過ぎて、かつフォームが見える手前まで表示
-      if (heroBottom < 0 && formTop > windowHeight - 100) {
+      // フォームはヒーロー内にあるため、ヒーローを過ぎたら表示
+      if (heroBottom < 0) {
         floatingCta.classList.add('visible');
       } else {
         floatingCta.classList.remove('visible');

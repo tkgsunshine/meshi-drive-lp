@@ -2071,6 +2071,93 @@ html, body {
   }
 }
 
+/* ヒーロー: 背景に麻辣湯の写真、右に問い合わせフォーム */
+.hero-split {
+  position: relative;
+  overflow: hidden;
+  background: #18181B;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.hero-split .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-split .hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* 元画像が小さいため、引き伸ばしの粗さが目立たないよう少しぼかす */
+  filter: blur(2px);
+  transform: scale(1.04);
+}
+
+.hero-split .hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(16, 16, 18, 0.88) 0%, rgba(16, 16, 18, 0.7) 55%, rgba(16, 16, 18, 0.5) 100%);
+}
+
+.hero-split-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.hero-split .hero-creative-catch {
+  margin-bottom: 0;
+}
+
+.hero-form {
+  text-align: left;
+  color: var(--text-main);
+  scroll-margin-top: 80px;
+}
+
+.hero-form .form-box {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 18px;
+}
+
+@media (min-width: 900px) {
+  .hero-split {
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  .hero-split-inner {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+  }
+
+  .hero-split .hero-creative-catch {
+    text-align: left;
+  }
+
+  .hero-split .hero-pain-headline,
+  .hero-split .hero-empathy {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero-split .hero-pain-headline .pain-pre {
+    padding-left: 0;
+  }
+
+  .hero-split .hero-cta-mobile {
+    display: none;
+  }
+}
+
 /* ヒーロー: 商品画像 */
 .hero-visual {
   max-width: 340px;
