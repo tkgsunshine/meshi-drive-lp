@@ -37,11 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (floatingCta && heroSection && formSection) {
     const handleScroll = () => {
       const heroBottom = heroSection.getBoundingClientRect().bottom;
-      const formTop = formSection.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
 
-      // ヒーローを過ぎて、かつフォームが見える手前まで表示
-      if (heroBottom < 0 && formTop > windowHeight - 100) {
+      // フォームはヒーロー内にあるため、ヒーローを過ぎたら表示
+      if (heroBottom < 0) {
         floatingCta.classList.add('visible');
       } else {
         floatingCta.classList.remove('visible');
@@ -201,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
         takeout_status: '現在のテイクアウト',
         delivery_status: '現在のデリバリー',
         ubereats_status: 'Uber Eats等の利用状況',
-        business_hours: '営業時間',
         email: 'email',
         phone: '電話番号',
         notes: 'ご相談内容・備考'

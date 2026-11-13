@@ -54,7 +54,6 @@ const requiredFields = [
   { name: '現在のテイクアウト（任意）', regex: /name=["']takeout_status["']/s },
   { name: '現在のデリバリー（任意）', regex: /name=["']delivery_status["']/s },
   { name: 'Uber Eats等の利用状況（任意）', regex: /name=["']ubereats_status["']/s },
-  { name: '営業時間（任意）', regex: /id=["']business_hours["']/s },
   { name: '返信先メアド（必須）', regex: /id=["']email["'].*required/s },
   { name: '返信先電話番号（必須）', regex: /id=["']phone["'].*required/s },
   { name: 'その他備考（任意）', regex: /id=["']notes["']/s }
@@ -94,6 +93,10 @@ fs.writeFileSync(path.join(distDir, 'index.html'), htmlContent, 'utf-8');
 const v1Path = path.join(projectRoot, 'index-v1-tax-focus.html');
 if (fs.existsSync(v1Path)) {
   fs.writeFileSync(path.join(distDir, 'index-v1-tax-focus.html'), fs.readFileSync(v1Path, 'utf-8'), 'utf-8');
+}
+const ghostPath = path.join(projectRoot, 'index-ghost.html');
+if (fs.existsSync(ghostPath)) {
+  fs.writeFileSync(path.join(distDir, 'index-ghost.html'), fs.readFileSync(ghostPath, 'utf-8'), 'utf-8');
 }
 fs.writeFileSync(path.join(distCssDir, 'style.css'), cssContent, 'utf-8');
 fs.writeFileSync(path.join(distJsDir, 'main.js'), jsContent, 'utf-8');
