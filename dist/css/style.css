@@ -2086,19 +2086,25 @@ html, body {
   z-index: 0;
 }
 
-.hero-split .hero-bg img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+/* 背景: 5枚の写真を大きく横に流し続ける（ループ） */
+.hero-split .hero-marquee-track {
+  display: flex;
+  width: max-content;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0;
-  transition: opacity 1.2s ease;
+  animation: hero-marquee 50s linear infinite;
 }
 
-.hero-split .hero-bg img.is-active {
-  opacity: 1;
+.hero-split .hero-marquee-track img {
+  flex: 0 0 auto;
+  height: 100%;
+  width: auto;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+@keyframes hero-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .hero-split .hero-bg::after {
@@ -2110,13 +2116,13 @@ html, body {
 
 @media (max-width: 899px) {
   .hero-split .hero-bg::after {
-    background: rgba(16, 16, 18, 0.62);
+    background: rgba(16, 16, 18, 0.5);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-split .hero-bg img {
-    transition: none;
+  .hero-split .hero-marquee-track {
+    animation: none;
   }
 }
 
