@@ -2743,3 +2743,8 @@ html, body {
 /* 事例カードの棒グラフ：背景写真に埋もれないよう、5万円側を濃く */
 .case-bars .bar-before { height: 10px; background: #71717A; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85); }
 .case-bars .bar-after { box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85); }
+
+/* 消費税の見出しを1行に */
+.section-headline h2.hl-title span.hl-one { font-size: min(4.5vw, 1.7rem); padding: 5px 8px; color: #1a1a1a; }
+.section-headline h2.hl-title span.hl-one em { font-style: normal; color: var(--primary); }
+@media (min-width: 769px) { .section-headline h2.hl-title span.hl-one { font-size: 1.7rem; padding: 6px 20px; } }
