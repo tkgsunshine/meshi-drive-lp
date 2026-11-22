@@ -2424,3 +2424,15 @@ html, body {
   .sol-step-rail::before { left: 7px; right: auto; top: 18px; bottom: -14px; width: 3px; height: auto; }
   .sol-step:last-child .sol-step-rail::before { display: none; }
 }
+
+/* ヒーロー見出し部分のみ：極太フォント＋斜体 */
+.hero-win-headline,
+.hero-win-sub span {
+  font-family: "Dela Gothic One", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 400;
+}
+.hero-win-headline .hw-line,
+.hero-win-sub span {
+  transform: skewX(-8deg);
+}
+.hero-win-headline .hw-line { font-weight: 400; }
