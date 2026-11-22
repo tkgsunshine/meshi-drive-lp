@@ -2677,3 +2677,30 @@ html, body {
   }
   .brand-next.is-hidden { opacity: 0; pointer-events: none; }
 }
+
+/* セクション見出し：斜め白帯＋太字（1枚目のデザインを他にも反映） */
+.section-headline h2.hl-title {
+  font-family: "Dela Gothic One", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0;
+  margin: 8px 0 14px;
+}
+.section-headline h2.hl-title span {
+  display: table;
+  margin: 0 auto 6px;
+  background: #fff;
+  padding: 4px 14px;
+  transform: skewX(-8deg);
+  box-shadow: 4px 4px 0 var(--primary-border);
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+.section-headline h2.hl-title span:last-child { color: var(--primary); }
+@media (min-width: 769px) {
+  .section-headline h2.hl-title span { font-size: 1.7rem; padding: 6px 20px; }
+}
+@media (max-width: 380px) {
+  .section-headline h2.hl-title span { font-size: 1rem; padding: 4px 10px; }
+}
