@@ -2098,8 +2098,6 @@ html, body {
   flex: 0 0 auto;
   height: 100%;
   width: auto;
-  aspect-ratio: 5 / 4;
-  object-fit: cover;
 }
 
 @keyframes hero-marquee {
