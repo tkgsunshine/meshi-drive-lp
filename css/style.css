@@ -2629,3 +2629,9 @@ html, body {
 .form-control { padding: 8px 12px; line-height: 1.4; }
 .form-group { margin-bottom: 14px; }
 .form-label { margin-bottom: 4px; }
+
+/* 3つ目の丸バッジ（5万円→31万円） */
+.hero-badge-up .hb-big { font-size: 1.25rem; letter-spacing: -0.03em; white-space: nowrap; }
+.hero-badge-up .hb-big small { font-size: 0.6rem; }
+.hero-badge-up .hb-tag { font-size: 0.5rem; }
+@media (min-width: 900px) { .hero-badge-up .hb-big { font-size: 1.6rem; } .hero-badge-up .hb-tag { font-size: 0.6rem; } }
