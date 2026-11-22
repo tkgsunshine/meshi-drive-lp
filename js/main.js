@@ -195,8 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         manager_name: '担当者名',
         ubereats_status: 'Uber Eats等の利用状況',
         email: 'email',
-        phone: '電話番号',
-        notes: 'ご相談内容・備考'
+        phone: '電話番号'
       };
       const formData = new FormData();
       Object.keys(labels).forEach(name => {
