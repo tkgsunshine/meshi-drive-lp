@@ -2748,3 +2748,8 @@ html, body {
 .section-headline h2.hl-title span.hl-one { font-size: min(4.5vw, 1.7rem); padding: 5px 8px; color: #1a1a1a; }
 .section-headline h2.hl-title span.hl-one em { font-style: normal; color: var(--primary); }
 @media (min-width: 769px) { .section-headline h2.hl-title span.hl-one { font-size: 1.7rem; padding: 6px 20px; } }
+
+/* 消費税セクションの日付ラベル：2色の斜めタグ */
+.tax-lite-chip { display: inline-flex; align-items: stretch; border: 0; background: none; padding: 0; border-radius: 0; transform: skewX(-8deg); overflow: hidden; box-shadow: 3px 3px 0 var(--primary-border); font-size: 0.85rem; font-weight: 900; }
+.tax-lite-chip b { background: #d4263a; color: #fff; padding: 6px 10px; font-weight: 900; }
+.tax-lite-chip i { background: #1a1a1a; color: #fff; padding: 6px 12px; font-style: normal; font-weight: 800; }
