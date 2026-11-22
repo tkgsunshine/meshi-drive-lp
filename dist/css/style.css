@@ -61,6 +61,7 @@ html {
 
 body {
   overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -1644,6 +1645,7 @@ button, input, select, textarea {
    ========================================================================== */
 html, body {
   overflow-x: hidden !important;
+  overflow-x: clip !important;
   width: 100% !important;
   max-width: 100vw !important;
 }
