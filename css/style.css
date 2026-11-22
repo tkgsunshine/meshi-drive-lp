@@ -2760,7 +2760,7 @@ html, body {
 
 .brand-more-card .more-plus {
   background: #fff url("../images/hero-2-shoga-800.webp") center / cover no-repeat;
-  width: 84px; height: 84px; line-height: 0; font-size: 0;
+  width: 126px; height: 126px; line-height: 0; font-size: 0;
   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.45);
 }
 
@@ -2769,5 +2769,5 @@ html, body {
 .section-headline h2.hl-title.hl-stagger span:last-child { margin: 0 0 6px auto; }
 
 /* 3行見出し：左・右・左でずらす */
-.section-headline h2.hl-title.hl-stagger span:nth-child(2):not(:last-child) { margin: 0 0 6px auto; }
-.section-headline h2.hl-title.hl-stagger span:nth-child(3):last-child { margin: 0 auto 6px 14px; }
+.section-headline h2.hl-title.hl-stagger span:nth-child(2):not(:last-child) { margin: 0 auto 6px; }
+.section-headline h2.hl-title.hl-stagger span:nth-child(3):last-child { margin: 0 0 6px auto; }
