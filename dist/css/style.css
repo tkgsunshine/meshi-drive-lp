@@ -216,14 +216,34 @@ button, input, select, textarea {
   gap: 8px;
 }
 
-.brand-logo .logo-badge {
-  background: var(--primary);
-  color: #fff;
+.brand-logo .logo-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-logo .logo-icon {
+  flex: 0 0 auto;
+  filter: drop-shadow(0 2px 4px rgba(232, 84, 42, 0.35));
+}
+
+.brand-logo .logo-text {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-size: 23px;
   font-weight: 900;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  padding: 5px 12px;
-  border-radius: var(--radius-sm);
+  font-style: italic;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.brand-logo .logo-meshi {
+  color: #1f1f23;
+}
+
+.brand-logo .logo-drive {
+  color: var(--primary);
 }
 
 .brand-logo .logo-sub {
