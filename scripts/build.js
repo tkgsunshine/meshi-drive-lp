@@ -48,11 +48,6 @@ try {
 const requiredFields = [
   { name: '店舗名（必須）', regex: /id=["']shop_name["'].*required/s },
   { name: '担当者名（必須）', regex: /id=["']manager_name["'].*required/s },
-  { name: '業態（任意）', regex: /id=["']business_type["']/s },
-  { name: '店舗エリア（任意）', regex: /id=["']shop_area["']/s },
-  { name: '月商（任意・単位万円）', regex: /id=["']monthly_sales["']/s },
-  { name: '現在のテイクアウト（任意）', regex: /name=["']takeout_status["']/s },
-  { name: '現在のデリバリー（任意）', regex: /name=["']delivery_status["']/s },
   { name: 'Uber Eats等の利用状況（任意）', regex: /name=["']ubereats_status["']/s },
   { name: '返信先メアド（必須）', regex: /id=["']email["'].*required/s },
   { name: '返信先電話番号（必須）', regex: /id=["']phone["'].*required/s },

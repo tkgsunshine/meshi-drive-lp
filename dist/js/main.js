@@ -209,11 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const labels = {
         shop_name: '店舗名',
         manager_name: '担当者名',
-        business_type: '業態',
-        shop_area: '店舗エリア',
-        monthly_sales: '月商（万円）',
-        takeout_status: '現在のテイクアウト',
-        delivery_status: '現在のデリバリー',
         ubereats_status: 'Uber Eats等の利用状況',
         email: 'email',
         phone: '電話番号',
