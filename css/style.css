@@ -2608,3 +2608,19 @@ html, body {
 .tax-big-down { font-size: 1.5rem; color: #FDBA74; margin: 2px 0; }
 .tax-big strong { display: block; font-size: 6.5rem; line-height: 1; font-weight: 900; font-style: italic; background: linear-gradient(180deg, #FFB070, #E85A18); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 0.1em; }
 .tax-big em { font-style: normal; font-size: 0.85rem; color: #FDBA74; font-weight: 800; }
+
+/* 導入事例カード：枠のみ変更（中身は据え置き） */
+.case-card {
+  border: 2px solid #1a1a1a;
+  border-top: 2px solid #1a1a1a;
+  border-radius: 6px;
+  box-shadow: 6px 6px 0 var(--primary);
+}
+.case-card::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(232, 90, 24, 0.55);
+  border-radius: 3px;
+  pointer-events: none;
+}
