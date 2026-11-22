@@ -2712,3 +2712,30 @@ html, body {
   .hero-badge-up .hb-big { height: calc(1.8rem * 1.15); }
   .hero-badge-up .hb-tag { font-size: 0.6rem; }
 }
+
+/* ＋α を図で示す：2枚目は「追加できるオプション」の見た目に */
+.ghost-card-good.ghost-card-plus {
+  position: relative;
+  background: #FFFDFB;
+  border: 2px dashed var(--primary);
+  box-shadow: none;
+}
+.ghost-card-good.ghost-card-plus .ghost-tag { background: #1a1a1a; color: #fff; }
+.ghost-card-plus .plus-alpha {
+  position: absolute;
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #E85A18, #F97316);
+  color: #fff;
+  font-size: 1.25rem; font-weight: 900; line-height: 1;
+  box-shadow: 0 0 0 5px #FFF9F5, 0 4px 12px rgba(232, 90, 24, 0.35);
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .ghost-compare { gap: 44px; }
+  .ghost-card-plus .plus-alpha { top: -48px; left: 50%; transform: translateX(-50%); }
+}
+@media (min-width: 769px) {
+  .ghost-card-plus .plus-alpha { left: -34px; top: 50%; transform: translateY(-50%); }
+}
