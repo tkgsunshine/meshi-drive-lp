@@ -2295,3 +2295,81 @@ html, body {
 .case-to { font-size: 32px; color: var(--primary); }
 .case-desc { margin: 0; font-size: 13px; line-height: 1.7; text-align: left; color: #444; }
 .case-note { margin: 16px 0 0; font-size: 11px; text-align: center; color: var(--text-muted); }
+
+/* ヒーロー: 実績訴求（白帯の見出し＋丸バッジ） */
+.hero-win-headline {
+  margin: 0 0 10px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+.hero-win-headline .hw-line {
+  white-space: nowrap;
+  display: table;
+  background: #fff;
+  color: #1a1a1a;
+  padding: 4px 14px;
+  margin: 0 auto 6px;
+}
+.hero-win-headline .hw-line-1 { font-size: 1.35rem; }
+.hero-win-headline .hw-line-2 { font-size: 1.6rem; padding: 6px 14px 8px; }
+.hero-win-headline .hw-to { color: var(--primary); font-size: 2.6rem; margin-left: 6px; }
+.hero-win-sub { margin: 0 0 14px; }
+.hero-win-sub span {
+  display: table;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 4px 12px;
+}
+.hero-badges {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+.hero-badge {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  line-height: 1.15;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+.hero-badge-accent { background: #FFF4ED; }
+.hb-small { font-size: 0.62rem; font-weight: 800; }
+.hb-big { font-size: 1.8rem; font-weight: 900; color: var(--primary); }
+.hb-big small { font-size: 0.8rem; margin-left: 1px; }
+.hb-tag { font-size: 0.6rem; font-weight: 800; color: #555; }
+.hero-win-note {
+  margin: 0;
+  font-size: 0.68rem;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 899px) {
+  .hero-win-headline .hw-line-1 { font-size: 1.05rem; }
+  .hero-win-headline .hw-line-2 { font-size: 1.25rem; }
+  .hero-win-headline .hw-to { font-size: 2rem; }
+  .hero-win-sub span { font-size: 0.8rem; }
+  .hero-badge { width: 92px; height: 92px; }
+  .hb-big { font-size: 1.55rem; }
+}
+@media (min-width: 900px) {
+  .hero-split .hero-win-headline .hw-line,
+  .hero-split .hero-win-sub span { margin-left: 0; margin-right: 0; }
+  .hero-split .hero-badges { justify-content: flex-start; }
+  .hero-win-headline .hw-line-1 { font-size: 1.7rem; }
+  .hero-win-headline .hw-line-2 { font-size: 1.7rem; }
+  .hero-win-headline .hw-to { font-size: 2.7rem; }
+  .hero-badge { width: 120px; height: 120px; }
+}
