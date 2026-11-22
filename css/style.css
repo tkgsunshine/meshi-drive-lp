@@ -2704,3 +2704,11 @@ html, body {
 @media (max-width: 380px) {
   .section-headline h2.hl-title span { font-size: 1rem; padding: 4px 10px; }
 }
+
+/* 3つ目バッジの文字位置を、他の2つと同じ高さに揃える */
+.hero-badge-up .hb-tag { font-size: 0.6rem; }
+.hero-badge-up .hb-big { display: flex; align-items: center; justify-content: center; height: calc(1.55rem * 1.15); }
+@media (min-width: 900px) {
+  .hero-badge-up .hb-big { height: calc(1.8rem * 1.15); }
+  .hero-badge-up .hb-tag { font-size: 0.6rem; }
+}
