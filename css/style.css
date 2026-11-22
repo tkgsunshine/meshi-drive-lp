@@ -2829,3 +2829,8 @@ html, body {
 @media (max-width: 380px) {
   .section-headline h2.hl-title.hl-solo i { padding: 4px 10px; font-size: 1rem; }
 }
+
+/* PC：01〜04の数字を、下の丸の真上に置く */
+@media (min-width: 768px) {
+  .sol-step-num { text-align: center; margin-right: -14px; }
+}
