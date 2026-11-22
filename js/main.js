@@ -332,3 +332,21 @@ document.addEventListener('DOMContentLoaded', () => {
     dots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
   }, { passive: true });
 })();
+
+// メニュー紹介スライダーの「次へ」ボタン（薄い矢印）
+(function () {
+  var grid = document.querySelector('.brand-showcase-grid');
+  var btn = document.querySelector('.brand-next');
+  if (!grid || !btn) return;
+  function update() {
+    var atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+    btn.classList.toggle('is-hidden', atEnd);
+  }
+  btn.addEventListener('click', function () {
+    var card = grid.querySelector('.brand-mini-card');
+    var step = card ? card.getBoundingClientRect().width + 12 : grid.clientWidth * 0.8;
+    grid.scrollBy({ left: step, behavior: 'smooth' });
+  });
+  grid.addEventListener('scroll', update, { passive: true });
+  update();
+})();
