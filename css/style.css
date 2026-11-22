@@ -2457,3 +2457,41 @@ html, body {
   line-height: 1;
   color: #555;
 }
+
+/* 導入事例：数字を主役にした見せ方（上書き） */
+.case-card {
+  position: relative;
+  background: linear-gradient(180deg, #FFF1E6 0%, #FFFFFF 62%);
+  border: 0;
+  border-top: 6px solid var(--primary);
+  border-radius: 16px;
+  padding: 22px 20px 20px;
+  box-shadow: 0 10px 28px rgba(232, 90, 24, 0.16);
+  overflow: hidden;
+}
+.case-type { font-size: 11px; letter-spacing: 0.02em; }
+.case-meta { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 12px 0 4px; }
+.case-meta b { font-size: 1.25rem; font-weight: 900; color: #1a1a1a; }
+.case-meta span { font-size: 12px; font-weight: 800; color: var(--text-muted); }
+.case-sales-label { margin-top: 6px; }
+.case-sales { margin: 0 0 8px; }
+.case-to { font-size: 3.4rem; line-height: 1; letter-spacing: -0.02em; text-shadow: 0 3px 0 rgba(232, 90, 24, 0.12); }
+.case-to small { font-size: 1.3rem; margin-left: 2px; letter-spacing: 0; }
+.case-from { font-size: 1.15rem; }
+.case-bars { display: flex; align-items: flex-end; justify-content: center; gap: 8px; height: 48px; margin: 0 auto 10px; }
+.case-bars i { display: block; width: 36px; border-radius: 6px 6px 0 0; }
+.case-bars .bar-before { height: 8px; background: #D4D4D8; }
+.case-bars .bar-after { height: 48px; background: linear-gradient(180deg, #F97316, #E85A18); }
+.case-burst {
+  position: absolute;
+  top: 64px;
+  right: 12px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transform: rotate(8deg);
+}
+.case-desc { text-align: center; }
