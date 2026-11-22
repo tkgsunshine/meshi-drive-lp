@@ -2373,3 +2373,54 @@ html, body {
   .hero-win-headline .hw-to { font-size: 2.7rem; }
   .hero-badge { width: 120px; height: 120px; }
 }
+
+/* 解決策：マイルストーン型（大きな数字＋横ライン） */
+.solutions-grid.sol-steps {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 1000px;
+}
+.sol-step { position: relative; padding: 0 14px 0 0; }
+.sol-step-num {
+  display: block;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  color: #FDBA74;
+}
+.sol-step-rail { position: relative; height: 18px; margin: 8px 0 12px; }
+.sol-step-rail::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 7px;
+  height: 3px;
+  background: #FDBA74;
+}
+.sol-step:last-child .sol-step-rail::before { right: 14px; }
+.sol-step-dot {
+  position: absolute;
+  left: 0; top: 0;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px #FFF4ED;
+}
+.sol-step-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.sol-step-title { font-size: 1.05rem; font-weight: 900; color: var(--dark); line-height: 1.5; margin-bottom: 6px; }
+.sol-step-desc { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); line-height: 1.7; }
+
+@media (max-width: 767px) {
+  .solutions-grid.sol-steps { grid-template-columns: 1fr; max-width: 520px; }
+  .sol-step { padding: 0 0 28px 40px; }
+  .sol-step:last-child { padding-bottom: 0; }
+  .sol-step-num { font-size: 44px; }
+  .sol-step-rail { position: absolute; left: 0; top: 14px; bottom: 0; width: 18px; height: auto; margin: 0; }
+  .sol-step-rail::before { left: 7px; right: auto; top: 18px; bottom: -14px; width: 3px; height: auto; }
+  .sol-step:last-child .sol-step-rail::before { display: none; }
+}
