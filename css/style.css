@@ -2109,12 +2109,12 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(16, 16, 18, 0.78) 0%, rgba(16, 16, 18, 0.5) 55%, rgba(16, 16, 18, 0.38) 100%);
+  background: linear-gradient(90deg, rgba(16, 16, 18, 0.55) 0%, rgba(16, 16, 18, 0.28) 55%, rgba(16, 16, 18, 0.18) 100%);
 }
 
 @media (max-width: 899px) {
   .hero-split .hero-bg::after {
-    background: rgba(16, 16, 18, 0.5);
+    background: rgba(16, 16, 18, 0.32);
   }
 }
 
@@ -2135,6 +2135,15 @@ html, body {
 
 .hero-split .hero-creative-catch {
   margin-bottom: 0;
+}
+
+.hero-split .hero-pain-headline,
+.hero-split .hero-empathy {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6), 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero-split .hero-empathy {
+  color: #FFFFFF;
 }
 
 .hero-form {
