@@ -2635,3 +2635,12 @@ html, body {
 .hero-badge-up .hb-big small { font-size: 0.6rem; }
 .hero-badge-up .hb-tag { font-size: 0.5rem; }
 @media (min-width: 900px) { .hero-badge-up .hb-big { font-size: 1.6rem; } .hero-badge-up .hb-tag { font-size: 0.6rem; } }
+
+/* ヘッダーCTA：文言統一で長くなったため折り返さない */
+.header-cta-btn { white-space: nowrap; flex-shrink: 0; }
+@media (max-width: 480px) {
+  .header-cta-btn { font-size: 12px; padding: 8px 12px; gap: 4px; }
+  .header-cta-btn svg { display: none; }
+  .brand-logo .logo-text { font-size: 19px; }
+  .brand-logo .logo-icon { width: 30px; height: 30px; }
+}
