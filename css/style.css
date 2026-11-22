@@ -2651,7 +2651,7 @@ html, body {
   position: absolute;
   inset: 0;
   background: var(--case-bg) center / cover no-repeat;
-  opacity: 0.12;
+  opacity: 0.2;
   z-index: 0;
   pointer-events: none;
 }
