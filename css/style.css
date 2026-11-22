@@ -2753,3 +2753,7 @@ html, body {
 .tax-lite-chip { display: inline-flex; align-items: stretch; border: 0; background: none; padding: 0; border-radius: 0; transform: skewX(-8deg); overflow: hidden; box-shadow: 3px 3px 0 var(--primary-border); font-size: 0.85rem; font-weight: 900; }
 .tax-lite-chip b { background: #d4263a; color: #fff; padding: 6px 10px; font-weight: 900; }
 .tax-lite-chip i { background: #1a1a1a; color: #fff; padding: 6px 12px; font-style: normal; font-weight: 800; }
+
+/* 21字の見出しを1行に（文字は少し小さめ） */
+.section-headline h2.hl-title span.hl-one.hl-long { font-size: min(4.1vw, 1.7rem); padding: 5px 7px; }
+@media (min-width: 769px) { .section-headline h2.hl-title span.hl-one.hl-long { font-size: 1.7rem; padding: 6px 20px; } }
