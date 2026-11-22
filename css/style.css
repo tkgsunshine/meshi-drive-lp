@@ -2388,7 +2388,7 @@ html, body {
   line-height: 1;
   color: #FDBA74;
 }
-.sol-step-rail { position: relative; height: 18px; margin: 8px 0 12px; }
+.sol-step-rail { position: relative; height: 18px; margin: 8px -14px 12px 0; }
 .sol-step-rail::before {
   content: "";
   position: absolute;
@@ -2396,10 +2396,12 @@ html, body {
   height: 3px;
   background: #FDBA74;
 }
-.sol-step:last-child .sol-step-rail::before { right: 14px; }
+.sol-step:first-child .sol-step-rail::before { left: 50%; }
+.sol-step:last-child .sol-step-rail::before { right: 50%; }
 .sol-step-dot {
   position: absolute;
-  left: 0; top: 0;
+  left: 50%; top: 0;
+  margin-left: -9px;
   width: 18px; height: 18px;
   border-radius: 50%;
   background: var(--primary);
@@ -2421,8 +2423,11 @@ html, body {
   .sol-step:last-child { padding-bottom: 0; }
   .sol-step-num { font-size: 44px; }
   .sol-step-rail { position: absolute; left: 0; top: 14px; bottom: 0; width: 18px; height: auto; margin: 0; }
+  .sol-step-dot { left: 0; margin-left: 0; }
+  .sol-step:first-child .sol-step-rail::before { left: 7px; }
   .sol-step-rail::before { left: 7px; right: auto; top: 18px; bottom: -14px; width: 3px; height: auto; }
   .sol-step:last-child .sol-step-rail::before { display: none; }
+  .sol-step-rail::before { right: auto; }
 }
 
 /* ヒーロー見出し部分のみ：極太フォント＋斜体 */
