@@ -2660,3 +2660,4 @@ html, body {
 .case-grid .case-card:nth-child(1) { --case-bg: url("../images/hero-2-shoga-800.webp"); }
 .case-grid .case-card:nth-child(2) { --case-bg: url("../images/hero-4-maratan-800.webp"); }
 .case-grid .case-card:nth-child(3) { --case-bg: url("../images/hero-1-butadon-800.webp"); }
+.hero-badge-up .hb-big .hb-note { right: -2px; top: 2px; }
