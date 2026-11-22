@@ -2087,20 +2087,37 @@ html, body {
 }
 
 .hero-split .hero-bg img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  /* 元画像が小さいため、引き伸ばしの粗さが目立たないよう少しぼかす */
-  filter: blur(2px);
-  transform: scale(1.04);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero-split .hero-bg img.is-active {
+  opacity: 1;
 }
 
 .hero-split .hero-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(16, 16, 18, 0.88) 0%, rgba(16, 16, 18, 0.7) 55%, rgba(16, 16, 18, 0.5) 100%);
+  background: linear-gradient(90deg, rgba(16, 16, 18, 0.78) 0%, rgba(16, 16, 18, 0.5) 55%, rgba(16, 16, 18, 0.38) 100%);
+}
+
+@media (max-width: 899px) {
+  .hero-split .hero-bg::after {
+    background: rgba(16, 16, 18, 0.62);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-split .hero-bg img {
+    transition: none;
+  }
 }
 
 .hero-split-inner {

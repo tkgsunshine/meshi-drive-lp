@@ -38,7 +38,13 @@
 
   <!-- ヒーローセクション (1st View): 顧客の悩み ➔ 解決の約束（広告クリエイティブ2連動） -->
   <section id="hero" class="hero-section hero-split">
-    <picture class="hero-bg" aria-hidden="true"><source srcset="./images/brand-maratan.webp" type="image/webp"><img src="./images/brand-maratan.png" alt="" width="512" height="409" fetchpriority="high" decoding="async"></picture>
+    <div class="hero-bg hero-carousel" aria-hidden="true">
+      <img class="hero-slide is-active" src="./images/hero-1-butadon-1600.webp" srcset="./images/hero-1-butadon-800.webp 800w, ./images/hero-1-butadon-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1280" fetchpriority="high" decoding="async">
+      <img class="hero-slide" src="./images/hero-2-shoga-1600.webp" srcset="./images/hero-2-shoga-800.webp 800w, ./images/hero-2-shoga-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+      <img class="hero-slide" src="./images/hero-3-comcrepe-1600.webp" srcset="./images/hero-3-comcrepe-800.webp 800w, ./images/hero-3-comcrepe-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+      <img class="hero-slide" src="./images/hero-4-maratan-1600.webp" srcset="./images/hero-4-maratan-800.webp 800w, ./images/hero-4-maratan-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+      <img class="hero-slide" src="./images/hero-5-butakimchi-1600.webp" srcset="./images/hero-5-butakimchi-800.webp 800w, ./images/hero-5-butakimchi-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+    </div>
     <div class="container hero-split-inner">
       <div class="hero-creative-catch">
         <p class="hero-campaign-badge"><span class="hcb-label">キャンペーン中</span>初期費用 0円</p>
@@ -68,7 +74,7 @@
           <div class="form-header-title">
             <span class="badge">ENTRY</span>
             <h3>無料相談 お問い合わせ</h3>
-            <p>気軽にご相談ください。必須は4項目だけ。入力して送信するだけです。（所要時間：約1分）</p>
+            <p>お気軽にご相談ください。所要時間：約1分。</p>
           </div>
 
           <form id="inquiry-form" novalidate>

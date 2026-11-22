@@ -50,6 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
+  // ヒーロー背景カルーセル（5枚を順番にフェード切り替え）
+  const heroSlides = document.querySelectorAll('.hero-carousel .hero-slide');
+  if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let heroIndex = 0;
+    let heroTimer = null;
+    const showNext = () => {
+      heroSlides[heroIndex].classList.remove('is-active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('is-active');
+    };
+    const startHero = () => { if (!heroTimer) heroTimer = setInterval(showNext, 4500); };
+    const stopHero = () => { clearInterval(heroTimer); heroTimer = null; };
+    document.addEventListener('visibilitychange', () => (document.hidden ? stopHero() : startHero()));
+    startHero();
+  }
+
   // 3. Scroll Reveal アニメーション (Intersection Observer)
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   if (revealElements.length > 0) {
