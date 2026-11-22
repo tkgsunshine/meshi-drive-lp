@@ -314,3 +314,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// メニュー紹介スライダーのドット表示（スマホのスワイプ位置に合わせて切り替え）
+(function () {
+  var grid = document.querySelector('.brand-showcase-grid');
+  var dots = document.querySelectorAll('.brand-dots i');
+  if (!grid || !dots.length) return;
+  grid.addEventListener('scroll', function () {
+    var cards = grid.querySelectorAll('.brand-mini-card');
+    var idx = 0;
+    var best = Infinity;
+    cards.forEach(function (c, i) {
+      var d = Math.abs(c.offsetLeft - grid.scrollLeft - grid.firstElementChild.offsetLeft);
+      if (d < best) { best = d; idx = i; }
+    });
+    dots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
+  }, { passive: true });
+})();

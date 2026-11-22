@@ -2495,3 +2495,38 @@ html, body {
   transform: rotate(8deg);
 }
 .case-desc { text-align: center; }
+
+/* メニュー紹介：スマホは右からスワイプで次のカードが出るスライダー */
+.brand-slider-hint { display: none; }
+@media (max-width: 768px) {
+  .brand-showcase-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 2px 2px 8px;
+    margin: 0 -4px;
+  }
+  .brand-showcase-grid::-webkit-scrollbar { display: none; }
+  .brand-showcase-grid .brand-mini-card {
+    flex: 0 0 84%;
+    width: auto;
+    scroll-snap-align: start;
+  }
+  .brand-slider-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  .brand-dots { display: inline-flex; gap: 6px; }
+  .brand-dots i { width: 8px; height: 8px; border-radius: 50%; background: #FDBA74; opacity: 0.5; transition: all 0.2s; }
+  .brand-dots i.on { width: 20px; border-radius: 4px; background: var(--primary); opacity: 1; }
+}
