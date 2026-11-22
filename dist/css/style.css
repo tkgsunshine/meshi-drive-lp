@@ -2782,28 +2782,31 @@ html, body {
   .section-headline h2.hl-title.hl-stagger span:last-child { margin: 0 0 6px; }
 }
 
-/* 見出し上のリード文：斜めのオレンジ帯＋白文字で見出しとそろえる */
+/* 見出し上のリード文：両脇に斜線をあしらった強調テキスト */
 .section-headline .section-lead {
-  position: relative;
-  z-index: 0;
   display: table;
-  margin: 4px auto 10px;
-  padding: 5px 20px;
-  font-size: 0.9rem;
+  position: relative;
+  margin: 4px auto 12px;
+  padding: 0 22px;
+  font-size: 0.95rem;
   font-weight: 900;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: var(--primary);
   white-space: nowrap;
+  background: linear-gradient(transparent 62%, rgba(249, 115, 22, 0.22) 62%);
 }
-.section-headline .section-lead::before {
+.section-headline .section-lead::before,
+.section-headline .section-lead::after {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(135deg, #E85A18 0%, #F97316 100%);
-  transform: skewX(-8deg);
-  box-shadow: 3px 3px 0 var(--primary-border);
+  bottom: 0;
+  width: 3px;
+  height: 1.5em;
+  background: var(--primary);
+  border-radius: 2px;
 }
+.section-headline .section-lead::before { left: 4px; transform: rotate(-28deg); }
+.section-headline .section-lead::after { right: 4px; transform: rotate(28deg); }
 @media (max-width: 380px) {
-  .section-headline .section-lead { font-size: 0.8rem; padding: 4px 14px; }
+  .section-headline .section-lead { font-size: 0.82rem; padding: 0 18px; }
 }
