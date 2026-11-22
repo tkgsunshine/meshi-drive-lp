@@ -2624,3 +2624,8 @@ html, body {
   border-radius: 3px;
   pointer-events: none;
 }
+
+/* フォーム入力枠の縦幅を小さく（文字は16pxのままiOSのズームを防ぐ） */
+.form-control { padding: 8px 12px; line-height: 1.4; }
+.form-group { margin-bottom: 14px; }
+.form-label { margin-bottom: 4px; }
