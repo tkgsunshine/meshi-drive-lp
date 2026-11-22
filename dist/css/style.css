@@ -2810,3 +2810,27 @@ html, body {
 @media (max-width: 380px) {
   .section-headline .section-lead { font-size: 0.82rem; padding: 0 18px; }
 }
+
+/* 3フレーズ見出し：PCは1つの帯、スマホは3行を左・右・左でずらす */
+.section-headline h2.hl-title.hl-solo span { color: #1a1a1a; }
+.section-headline h2.hl-title.hl-solo i { font-style: normal; }
+.section-headline h2.hl-title.hl-solo i.em { color: var(--primary); }
+@media (max-width: 768px) {
+  .section-headline h2.hl-title.hl-solo span {
+    display: block; margin: 0; padding: 0; background: none; box-shadow: none; transform: none;
+  }
+  .section-headline h2.hl-title.hl-solo i {
+    display: table; margin: 0 auto 6px 0; background: #fff; padding: 4px 14px;
+    transform: skewX(-8deg); box-shadow: 4px 4px 0 var(--primary-border); white-space: nowrap;
+  }
+  .section-headline h2.hl-title.hl-solo i:nth-child(2) { margin: 0 auto 6px; }
+  .section-headline h2.hl-title.hl-solo i.em { margin: 0 0 6px auto; }
+}
+@media (max-width: 380px) {
+  .section-headline h2.hl-title.hl-solo i { padding: 4px 10px; font-size: 1rem; }
+}
+
+/* PC：01〜04の数字を、下の丸の真上に置く */
+@media (min-width: 768px) {
+  .sol-step-num { text-align: center; margin-right: -14px; }
+}
