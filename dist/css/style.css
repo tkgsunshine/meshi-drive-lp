@@ -2720,7 +2720,7 @@ html, body {
   border: 2px dashed var(--primary);
   box-shadow: none;
 }
-.ghost-card-good.ghost-card-plus .ghost-tag { background: #1a1a1a; color: #fff; }
+.ghost-card-good.ghost-card-plus .ghost-tag { background: linear-gradient(160deg, #0F766E, #14B8A6); color: #fff; }
 .ghost-card-plus .plus-alpha {
   position: absolute;
   width: 52px; height: 52px;
@@ -2771,3 +2771,42 @@ html, body {
 /* 3行見出し：左・右・左でずらす */
 .section-headline h2.hl-title.hl-stagger span:nth-child(2):not(:last-child) { margin: 0 auto 6px; }
 .section-headline h2.hl-title.hl-stagger span:nth-child(3):last-child { margin: 0 0 6px auto; }
+
+/* PC：ずらし見出しは1行に並べる */
+@media (min-width: 769px) {
+  .section-headline h2.hl-title.hl-stagger { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0 18px; }
+  .section-headline h2.hl-title.hl-stagger span,
+  .section-headline h2.hl-title.hl-stagger span:first-child,
+  .section-headline h2.hl-title.hl-stagger span:nth-child(2):not(:last-child),
+  .section-headline h2.hl-title.hl-stagger span:nth-child(3):last-child,
+  .section-headline h2.hl-title.hl-stagger span:last-child { margin: 0 0 6px; }
+}
+
+/* 見出し上のリード文：両脇に斜線をあしらった強調テキスト */
+.section-headline .section-lead {
+  display: table;
+  position: relative;
+  margin: 4px auto 12px;
+  padding: 0 22px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  white-space: nowrap;
+  background: linear-gradient(transparent 62%, rgba(249, 115, 22, 0.22) 62%);
+}
+.section-headline .section-lead::before,
+.section-headline .section-lead::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  height: 1.5em;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.section-headline .section-lead::before { left: 4px; transform: rotate(-28deg); }
+.section-headline .section-lead::after { right: 4px; transform: rotate(28deg); }
+@media (max-width: 380px) {
+  .section-headline .section-lead { font-size: 0.82rem; padding: 0 18px; }
+}
