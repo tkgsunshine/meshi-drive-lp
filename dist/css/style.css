@@ -2767,3 +2767,7 @@ html, body {
 /* 2行見出しを左右にずらす */
 .section-headline h2.hl-title.hl-stagger span:first-child { margin: 0 auto 6px 0; }
 .section-headline h2.hl-title.hl-stagger span:last-child { margin: 0 0 6px auto; }
+
+/* 3行見出し：左・右・左でずらす */
+.section-headline h2.hl-title.hl-stagger span:nth-child(2):not(:last-child) { margin: 0 0 6px auto; }
+.section-headline h2.hl-title.hl-stagger span:nth-child(3):last-child { margin: 0 auto 6px 14px; }
