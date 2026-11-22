@@ -2530,3 +2530,69 @@ html, body {
   .brand-dots i { width: 8px; height: 8px; border-radius: 50%; background: #FDBA74; opacity: 0.5; transition: all 0.2s; }
   .brand-dots i.on { width: 20px; border-radius: 4px; background: var(--primary); opacity: 1; }
 }
+
+/* メニュー紹介：キャッチを強く＋「他にも多数」カード */
+.proven-header-badge { margin-bottom: 22px; }
+.proven-header-badge .ph-label {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.proven-header-badge .ph-title {
+  font-family: "Dela Gothic One", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.proven-header-badge .ph-title span {
+  display: table;
+  margin: 0 auto 6px;
+  background: #fff;
+  padding: 4px 14px;
+  transform: skewX(-8deg);
+  box-shadow: 4px 4px 0 var(--primary-border);
+}
+.proven-header-badge .ph-l1 { font-size: 1.2rem; color: #1a1a1a; }
+.proven-header-badge .ph-l2 { font-size: 1.45rem; color: var(--primary); }
+@media (max-width: 480px) {
+  .proven-header-badge .ph-l1 { font-size: 1rem; }
+  .proven-header-badge .ph-l2 { font-size: 1.1rem; padding: 4px 10px; }
+}
+
+.brand-more-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  background: linear-gradient(160deg, #E85A18 0%, #F97316 100%);
+  border: 0;
+  color: #fff;
+}
+.brand-more-card .more-plus {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--primary);
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 64px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+}
+.brand-more-card .more-title { font-size: 1.25rem; font-weight: 900; line-height: 1.5; }
+.brand-more-card .more-sub { font-size: 0.85rem; font-weight: 800; color: #FFE3D1; }
+@media (min-width: 769px) {
+  .brand-more-card { grid-column: 1 / -1; flex-direction: row; gap: 18px; padding: 18px 24px; }
+  .brand-more-card .more-title br { display: none; }
+}
+
+/* フッターのロゴ（暗背景用） */
+.footer-title .footer-logo .logo-meshi, .footer-title .footer-logo .logo-drive { color: #fff; }
+.footer-title .footer-logo .logo-drive { color: #FF8A5C; }
+.footer-title .footer-logo { display: inline-flex; margin-bottom: 4px; }

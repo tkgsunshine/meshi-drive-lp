@@ -66,7 +66,6 @@ reportCheck('No automated score diagnosis in LP', !htmlContent.includes('78点')
 reportCheck('Proven brand case: 豚丼ジャンクキング / 豚キムチ / 生姜野郎', htmlContent.includes('豚丼ジャンクキング') && htmlContent.includes('生姜野郎'));
 reportCheck('Proven brand case: 風来麻辣湯', htmlContent.includes('風来麻辣湯'));
 reportCheck('Solution title updated', htmlContent.includes('メニュー導入からデリバリー運用まで、まとめてサポート'));
-reportCheck('Proven brand note updated', htmlContent.includes('スイーツメニューもご用意'));
 reportCheck('Company info present: 株式会社テラスヒ', htmlContent.includes('株式会社テラスヒ'));
 reportCheck('Manager info removed from footer', !htmlContent.includes('担当者：後野智行'));
 
