@@ -2644,3 +2644,19 @@ html, body {
   .brand-logo .logo-text { font-size: 19px; }
   .brand-logo .logo-icon { width: 30px; height: 30px; }
 }
+
+/* 導入事例カード：背景に料理写真をうっすら */
+.case-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--case-bg) center / cover no-repeat;
+  opacity: 0.12;
+  z-index: 0;
+  pointer-events: none;
+}
+.case-card > *:not(.case-burst) { position: relative; z-index: 1; }
+.case-card::before { z-index: 2; }
+.case-grid .case-card:nth-child(1) { --case-bg: url("../images/hero-2-shoga-800.webp"); }
+.case-grid .case-card:nth-child(2) { --case-bg: url("../images/hero-4-maratan-800.webp"); }
+.case-grid .case-card:nth-child(3) { --case-bg: url("../images/hero-1-butadon-800.webp"); }
