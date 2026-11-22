@@ -12,6 +12,9 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="apple-touch-icon" href="./favicon.svg">
   <link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap">
   <link rel="stylesheet" href="./css/style.css">
   <!-- Meta Pixel -->
   <script>
@@ -26,64 +29,131 @@
   <header class="header">
     <div class="container header-inner">
       <div class="brand-logo">
-        <span class="logo-badge">Meshi Drive</span>
+        <span class="logo-mark" aria-label="Meshi Drive">
+          <svg class="logo-icon" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#E8542A"/><path d="M7 17.5h20a10 10 0 0 1-20 0z" fill="#fff"/><path d="M12 9.5c-1.5 1.6 1.5 3 0 4.6M17 8c-1.5 1.6 1.5 3 0 4.6M22 9.5c-1.5 1.6 1.5 3 0 4.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span class="logo-text"><span class="logo-meshi">Meshi</span><span class="logo-drive">Drive</span></span>
+        </span>
         <span class="logo-sub">飲食店向け メニュー導入・デリバリー運用支援</span>
       </div>
       <a href="#contact-form" class="header-cta-btn shine-effect">
-        <span>無料相談フォームへ</span>
+        <span>今すぐ無料で相談する</span>
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg>
       </a>
     </div>
   </header>
 
   <!-- ヒーローセクション (1st View): 顧客の悩み ➔ 解決の約束（広告クリエイティブ2連動） -->
-  <section id="hero" class="hero-section">
-    <div class="container">
+  <section id="hero" class="hero-section hero-split">
+    <div class="hero-bg hero-marquee" aria-hidden="true">
+      <div class="hero-marquee-track">
+        <img src="./images/hero-4-maratan-1600.webp" srcset="./images/hero-4-maratan-800.webp 800w, ./images/hero-4-maratan-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" fetchpriority="high" decoding="async">
+        <img src="./images/hero-5-butakimchi-1600.webp" srcset="./images/hero-5-butakimchi-800.webp 800w, ./images/hero-5-butakimchi-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+        <img src="./images/hero-1-butadon-1600.webp" srcset="./images/hero-1-butadon-800.webp 800w, ./images/hero-1-butadon-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+        <img src="./images/hero-2-shoga-1600.webp" srcset="./images/hero-2-shoga-800.webp 800w, ./images/hero-2-shoga-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+        <img src="./images/hero-3-comcrepe-1600.webp" srcset="./images/hero-3-comcrepe-800.webp 800w, ./images/hero-3-comcrepe-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="900" loading="lazy" decoding="async">
+        <img src="./images/hero-4-maratan-1600.webp" srcset="./images/hero-4-maratan-800.webp 800w, ./images/hero-4-maratan-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+        <img src="./images/hero-5-butakimchi-1600.webp" srcset="./images/hero-5-butakimchi-800.webp 800w, ./images/hero-5-butakimchi-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+        <img src="./images/hero-1-butadon-1600.webp" srcset="./images/hero-1-butadon-800.webp 800w, ./images/hero-1-butadon-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+        <img src="./images/hero-2-shoga-1600.webp" srcset="./images/hero-2-shoga-800.webp 800w, ./images/hero-2-shoga-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="1280" loading="lazy" decoding="async">
+        <img src="./images/hero-3-comcrepe-1600.webp" srcset="./images/hero-3-comcrepe-800.webp 800w, ./images/hero-3-comcrepe-1600.webp 1600w" sizes="1100px" alt="" width="1600" height="900" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="container hero-split-inner">
       <div class="hero-creative-catch">
-        <h1 class="hero-pain-headline">
-          <span class="pain-pre">Uber Eatsを始めたけど、</span>
-          <span class="pain-core">
-            <span class="pain-word">売れない</span><span class="pain-period">。</span>
-          </span>
+        <h1 class="hero-win-headline">
+          <span class="hw-line hw-line-1">Uber Eatsの月商、</span>
+          <span class="hw-line hw-line-2"><span class="hw-from">5万円から</span><span class="hw-to">31万円へ。</span></span>
         </h1>
-        <p class="hero-empathy">
-          注文が入らない。広告を出しても、手応えがない。<br>
-          「このままだと、やばいかも…」と感じていませんか？
-        </p>
-        <div class="cta-box-wrapper" style="margin-top: 20px;">
+        <p class="hero-win-sub"><span>Uber Eatsが売れない方も、これから始める方も。</span></p>
+        <ul class="hero-badges">
+          <li class="hero-badge hero-badge-accent"><span class="hb-small">初期費用</span><span class="hb-big">0<small>円</small></span><span class="hb-tag">キャンペーン中</span></li>
+          <li class="hero-badge"><span class="hb-small">自店舗ブランド</span><span class="hb-big">86<small>万円</small><sup class="hb-note">※</sup></span><span class="hb-tag">最高売上</span></li>
+          <li class="hero-badge hero-badge-up"><span class="hb-small">月商</span><span class="hb-big">5→31<small>万円</small><sup class="hb-note">※</sup></span><span class="hb-tag">既存店の改善</span></li>
+        </ul>
+        <p class="hero-win-note">※東京23区内の個別店舗の実績です（インド料理店・ラーメン店）。成果は店舗により異なります。</p>
+        <div class="cta-box-wrapper hero-cta-mobile" style="margin-top: 20px;">
           <a href="#contact-form" class="btn-super-cta animate-cta-pulse shine-effect">
-            <span class="btn-sub">＼ 相談無料・入力1分 ／</span>
+            <span class="btn-sub">＼ 入力30秒 ／</span>
             <span class="btn-main">
-              売れない原因を無料で相談する
+              今すぐ無料で相談する
               <svg class="btn-arrow-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg>
             </span>
           </a>
         </div>
       </div>
+      <!-- 問い合わせフォーム（ヒーロー右） -->
+      <div id="contact-form" class="hero-form">
+      <div class="form-box">
+          <div class="form-header-title">
+            <h3>無料相談はこちらから</h3>
+            <p>入力は約30秒。初期費用0円キャンペーン中です。</p>
+          </div>
 
-      <!-- 広告クリエイティブ2連動: 3大原因ボックス -->
-      <div class="pain-causes-box reveal-on-scroll delay-100">
-        <div class="pain-causes-header">
-          デリバリーで売上が伸び悩む「よくある原因」、心当たりありませんか？
+          <form id="inquiry-form" novalidate>
+            <!-- 1. 店舗名 * -->
+            <div class="form-group">
+              <label for="shop_name" class="form-label">
+                店舗名 <span class="badge-req">必須</span>
+              </label>
+              <input type="text" id="shop_name" name="shop_name" class="form-control" placeholder="例）炭火焼肉 てらす" required>
+              <div id="err_shop_name" class="form-error-msg"></div>
+            </div>
+
+            <!-- 2. 担当者名 * -->
+            <div class="form-group">
+              <label for="manager_name" class="form-label">
+                担当者名 <span class="badge-req">必須</span>
+              </label>
+              <input type="text" id="manager_name" name="manager_name" class="form-control" placeholder="例）山田 太郎" required>
+              <div id="err_manager_name" class="form-error-msg"></div>
+            </div>
+
+            <!-- 10. メールアドレス（返信先） * -->
+            <div class="form-group">
+              <label for="email" class="form-label">
+                メールアドレス（返信先） <span class="badge-req">必須</span>
+              </label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="例）restaurant@example.com" required>
+              <div id="err_email" class="form-error-msg"></div>
+            </div>
+
+            <!-- 11. 電話番号（返信先） * -->
+            <div class="form-group">
+              <label for="phone" class="form-label">
+                電話番号（返信先） <span class="badge-req">必須</span>
+              </label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="例）09012345678" required>
+              <div id="err_phone" class="form-error-msg"></div>
+            </div>
+
+            <!-- 8. Uber Eats等の利用状況（有・無） * -->
+            <div class="form-group">
+              <label class="form-label">
+                Uber Eats等の利用状況 <span class="badge-opt">任意</span>
+              </label>
+              <div class="radio-button-group">
+                <label class="radio-btn-label">
+                  <input type="radio" name="ubereats_status" value="有">
+                  <span class="radio-btn-tile">有</span>
+                </label>
+                <label class="radio-btn-label">
+                  <input type="radio" name="ubereats_status" value="無">
+                  <span class="radio-btn-tile">無</span>
+                </label>
+              </div>
+            </div>
+
+
+            <div style="text-align: center; margin: 20px 0; font-size: 12px; color: var(--text-light);">
+              ※ご入力いただいた情報は、お問い合わせ対応のみに使用いたします。
+            </div>
+
+            <button type="submit" class="submit-btn shine-effect">
+              今すぐ無料で相談する
+            </button>
+          </form>
         </div>
-        <div class="pain-causes-grid">
-          <div class="pain-cause-card">
-            <span class="cause-num">01</span>
-            <strong>店内メニューを、そのまま出していませんか？</strong>
-            <p>デリバリーで選ばれるには、専用の売れる設計や写真・商品構成が必要です。</p>
-          </div>
-          <div class="pain-cause-card">
-            <span class="cause-num">02</span>
-            <strong>広告やキャンペーン、使いこなせていますか？</strong>
-            <p>媒体ごとの仕組みや集客設定を、活かしきれていないかもしれません。</p>
-          </div>
-          <div class="pain-cause-card">
-            <span class="cause-num">03</span>
-            <strong>売価と原価、合っていますか？</strong>
-            <p>プラットフォーム手数料を引いたあとに、ちゃんと利益が残る設計になっていますか？</p>
-          </div>
         </div>
-      </div>
     </div>
   </section>
 
@@ -91,49 +161,129 @@
   <section class="section-padding" style="background: #FFFFFF;">
     <div class="container">
       <div class="section-headline reveal-on-scroll">
-        <span class="badge">SOLUTION</span>
-        <p class="section-lead">でも、大丈夫です。うちに任せてください。</p>
-        <h2>メニュー導入からデリバリー運用まで、まとめてサポート</h2>
-        <p class="section-sub">売れるメニューの用意から、出店・媒体設定、始めたあとの運用まで。<br>面倒なことは、まとめて引き受けます。</p>
+        <p class="section-lead">準備も運用も、うちに任せてください。</p>
+        <h2 class="hl-title hl-stagger" aria-label="メニュー導入からデリバリー運用まで、まとめてサポート"><span>メニュー導入から</span><span>デリバリー運用まで、</span><span>まとめてサポート</span></h2>
       </div>
 
-      <div class="solutions-grid">
-        <div class="sol-card reveal-on-scroll delay-100">
-          <span class="sol-card-num">01 メニュー導入</span>
-          <div class="sol-card-title">売れるメニューを、まるごとお渡しします</div>
-          <div class="sol-card-desc">低原価・簡易オペレーションのメニューに、レシピ・画像・売価目安・食材仕入れまで、セットでご提供します。</div>
+      <div class="solutions-grid sol-steps">
+        <div class="sol-step reveal-on-scroll delay-100">
+          <span class="sol-step-num">01</span>
+          <div class="sol-step-rail"><span class="sol-step-dot"></span></div>
+          <span class="sol-step-tag">メニュー導入</span>
+          <div class="sol-step-title">売れるメニューを、まるごとお渡しします</div>
+          <div class="sol-step-desc">低原価・簡易オペレーションのメニューに、レシピ・画像・売価目安・食材仕入れまで、セットでご提供します。</div>
         </div>
-
-        <div class="sol-card reveal-on-scroll delay-200">
-          <span class="sol-card-num">02 販売設計</span>
-          <div class="sol-card-title">お店に合った売り方を、一緒に決めます</div>
-          <div class="sol-card-desc">メニューごとに売価や販売チャネルを整理して、店頭・テイクアウト・デリバリーそれぞれに合った売り方を設計します。</div>
+        <div class="sol-step reveal-on-scroll delay-200">
+          <span class="sol-step-num">02</span>
+          <div class="sol-step-rail"><span class="sol-step-dot"></span></div>
+          <span class="sol-step-tag">販売設計</span>
+          <div class="sol-step-title">お店に合った売り方を、一緒に決めます</div>
+          <div class="sol-step-desc">メニューごとに売価や販売チャネルを整理して、店頭・テイクアウト・デリバリーそれぞれに合った売り方を設計します。</div>
         </div>
-
-        <div class="sol-card reveal-on-scroll delay-100">
-          <span class="sol-card-num">03 出店・媒体設定</span>
-          <div class="sol-card-title">面倒な立ち上げは、お任せください</div>
-          <div class="sol-card-desc">新規出店の手続きや各種媒体の設定など、販売開始までをサポートします。</div>
+        <div class="sol-step reveal-on-scroll delay-300">
+          <span class="sol-step-num">03</span>
+          <div class="sol-step-rail"><span class="sol-step-dot"></span></div>
+          <span class="sol-step-tag">出店・媒体設定</span>
+          <div class="sol-step-title">面倒な立ち上げは、お任せください</div>
+          <div class="sol-step-desc">新規出店の手続きや各種媒体の設定など、販売開始までをサポートします。</div>
         </div>
-
-        <div class="sol-card reveal-on-scroll delay-200">
-          <span class="sol-card-num">04 デリバリー運用支援</span>
-          <div class="sol-card-title">始めたあとも、ずっと伴走します</div>
-          <div class="sol-card-desc">広告・キャンペーンの設定やメニュー変更など、販売開始後の運用も継続して支援します。</div>
+        <div class="sol-step reveal-on-scroll delay-100">
+          <span class="sol-step-num">04</span>
+          <div class="sol-step-rail"><span class="sol-step-dot"></span></div>
+          <span class="sol-step-tag">デリバリー運用支援</span>
+          <div class="sol-step-title">始めたあとも、ずっと伴走します</div>
+          <div class="sol-step-desc">広告・キャンペーンの設定やメニュー変更など、販売開始後の運用も継続して支援します。</div>
         </div>
       </div>
 
       <!-- SOLUTIONの最下部CTA -->
       <div class="cta-box-wrapper reveal-on-scroll" style="margin-top: 40px;">
         <a href="#contact-form" class="btn-super-cta animate-cta-pulse shine-effect">
-          <span class="btn-sub">＼ まずは気軽に、話を聞かせてください ／</span>
+          <span class="btn-sub">＼ 入力30秒 ／</span>
           <span class="btn-main">
-            今すぐ無料相談を申し込む
+            今すぐ無料で相談する
             <svg class="btn-arrow-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg>
           </span>
         </a>
-        <div class="cta-caption" style="text-align: center;">※相談無料・入力1分。しつこい営業は一切いたしません。現状の整理だけでも歓迎です。</div>
+        <div class="cta-caption" style="text-align: center;">※相談無料・入力30秒。しつこい営業は一切いたしません。現状の整理だけでも歓迎です。</div>
       </div>
+    </div>
+  </section>
+
+  <!-- 自店舗ブランドが主、弊社メニューでのゴーストレストランも可能 -->
+  <section class="section-padding" style="background: #FFF9F5;">
+    <div class="container">
+      <div class="section-headline reveal-on-scroll">
+        <p class="section-lead">まずは、自店舗ブランドから。</p>
+        <h2 class="hl-title hl-stagger" aria-label="自店舗ブランドを軸に、デリバリーを伸ばします"><span>自店舗ブランドを軸に、</span><span>デリバリーを伸ばします</span></h2>
+        <p class="section-sub">お店のメニューをもとにデリバリーメニューも開発するので、無駄が少なく始められます。<br>ご希望があれば、弊社のメニューでゴーストレストランを出すことも可能です。</p>
+      </div>
+
+      <div class="ghost-compare reveal-on-scroll delay-100">
+        <div class="ghost-card ghost-card-good">
+          <span class="ghost-tag">自店舗ブランドのデリバリー</span>
+          <ul>
+            <li>お店のメニューをもとにデリバリーメニューも開発するので、無駄が少ない</li>
+            <li>店頭・テイクアウト・デリバリーで売上を分散できる</li>
+            <li>今ある厨房と人で始められる</li>
+          </ul>
+        </div>
+        <div class="ghost-card ghost-card-good ghost-card-plus">
+          <span class="plus-alpha" aria-hidden="true">＋α</span>
+          <span class="ghost-tag">弊社メニューでゴーストも可能</span>
+          <ul>
+            <li>弊社のメニューで、デリバリー専門ブランドを追加できる</li>
+            <li>各プラットフォームの規制の動きを見ながら、無理のない形をご提案</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-box-wrapper reveal-on-scroll" style="margin-top: 32px;">
+        <a href="#contact-form" class="btn-super-cta animate-cta-pulse shine-effect">
+          <span class="btn-sub">＼ 入力30秒 ／</span>
+          <span class="btn-main">
+            今すぐ無料で相談する
+            <svg class="btn-arrow-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入事例（東京23区内） -->
+  <section id="cases" class="section-padding" style="background: #FFFFFF;">
+    <div class="container">
+      <div class="section-headline reveal-on-scroll">
+        <p class="section-lead">東京23区内の、導入事例。</p>
+        <h2 class="hl-title" aria-label="業態・エリアを問わず、売上が伸びています"><span class="hl-one hl-long">業態・エリアを問わず、<em>売上が伸びています</em></span></h2>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card reveal-on-scroll">
+          <span class="case-type">既存 自店舗ブランド｜売上改善</span>
+          <p class="case-meta"><b>インド料理店</b><span>住宅街エリア</span></p>
+          <p class="case-sales-label">月商</p>
+          <p class="case-sales"><span class="case-from">5万円</span><span class="case-arrow">➔</span><span class="case-to">31<small>万円</small></span></p>
+          <div class="case-bars" aria-hidden="true"><i class="bar-before"></i><i class="bar-after"></i></div>
+          <span class="case-burst">約6倍</span>
+          <p class="case-desc">すでに運営中のデリバリー店舗を改善。広告・キャンペーン運用を見直し、売上アップを実現しました。</p>
+        </article>
+        <article class="case-card reveal-on-scroll delay-100">
+          <span class="case-type">新規 自店舗ブランド｜立ち上げ</span>
+          <p class="case-meta"><b>ラーメン店</b><span>郊外エリア</span></p>
+          <p class="case-sales-label">最高売上</p>
+          <p class="case-sales"><span class="case-to">約86<small>万円</small></span></p>
+          <p class="case-desc">デリバリー未経験のお店が、Meshi Driveのメニューを活用して新たな売上を獲得しました。</p>
+        </article>
+        <article class="case-card reveal-on-scroll delay-200">
+          <span class="case-type">ゴーストレストラン</span>
+          <p class="case-meta"><b>居酒屋</b><span>オフィス街エリア</span></p>
+          <p class="case-sales-label">最高売上</p>
+          <p class="case-sales"><span class="case-to">約52<small>万円</small></span></p>
+          <p class="case-desc">既存の店舗と厨房を活用してゴーストレストランを導入。新たな売上の柱をつくりました。</p>
+        </article>
+      </div>
+      <p class="case-note">※いずれも個別店舗の実績です。成果は店舗の立地・業態・運用状況により異なります。</p>
     </div>
   </section>
 
@@ -141,80 +291,32 @@
   <section class="section-padding tax-timing-section" style="background: linear-gradient(180deg, #FFF9F5 0%, #FFFFFF 100%);">
     <div class="container">
       <div class="section-headline reveal-on-scroll">
-        <span class="badge" style="background: var(--primary);">WHY NOW?</span>
-        <h2>消費税1%の方針が出た、今がチャンスです。</h2>
+        <h2 class="hl-title" aria-label="消費税1%の方針。準備は、今からです。"><span class="hl-one">消費税1%の方針。<em>準備は、今からです。</em></span></h2>
       </div>
 
-      <div class="tax-timing-hero reveal-on-scroll delay-100">
-        <div class="cabinet-news-flash animate-pulse-glow" style="margin-bottom: 16px;">
-          <span class="news-tag">2027年4月〜</span>
-          飲食料品の消費税1%方針
-        </div>
-        <h3 class="tax-timing-catch">
-          知っていますか？ 2027年4月、飲食料品の消費税が1%になる方針です。<br>
-          <span class="tax-timing-highlight">「9%の価格差で、テイクアウト・デリバリーが選ばれる機会が増える可能性。」</span>
-        </h3>
+      <div class="tax-lite-head reveal-on-scroll delay-100">
+        <span class="tax-lite-chip"><b>2027年4月〜</b><i>飲食料品の消費税1%方針</i></span>
       </div>
 
-      <!-- 10% → 1% 激変インパクト比較カード -->
-      <div class="tax-transformation-card reveal-on-scroll shine-effect">
-        <div class="tax-transform-grid">
-          <div class="tax-before-box">
-            <div class="tb-label">店内（イートイン）</div>
-            <div class="tb-rate">10%</div>
-            <div class="tb-note">据え置き方針</div>
-          </div>
-          
-          <div class="tax-arrow-center">
-            <span class="tax-arrow-badge">9% 減税差</span>
-            <svg class="tax-arrow-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </div>
-
-          <div class="tax-after-hero">
-            <div class="ta-label">テイクアウト・デリバリー</div>
-            <div class="ta-rate-wrapper">
-              <span class="ta-rate-num">1</span>
-              <span class="ta-rate-unit">%</span>
-            </div>
-            <div class="ta-period">軽減税率適用方針</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ニュース解説バナー -->
-      <div class="news-fact-banner reveal-on-scroll delay-100">
-        <div class="news-fact-header">
-          🏛️ 8月5日に閣議決定された政府の基本方針
-        </div>
-        <ul class="news-fact-list">
-          <li><strong>テイクアウト・デリバリー（飲食料品）の消費税率が10%から1%に！</strong></li>
-          <li><strong>イートイン（外食）の消費税率は10%のまま据え置き</strong></li>
-          <li>イートインとテイクアウトで<strong>「9%」の価格差</strong>が発生し、消費者が「店外」を選ぶ機会が増える可能性があります</li>
-        </ul>
+      <div class="tax-big reveal-on-scroll">
+        <div class="tax-big-old"><small>店内（イートイン）</small><s>10%</s></div>
+        <div class="tax-big-down" aria-hidden="true">↓</div>
+        <div class="tax-big-new"><small>テイクアウト・デリバリー</small><strong>1%</strong><em>9%の差で、選ばれる可能性があります</em></div>
       </div>
 
       <div class="hero-punchline reveal-on-scroll delay-100" style="text-align: center; margin-top: 24px;">
-        お客さんの選択が、「テイクアウト・デリバリー」へ動く可能性があります。<br>
-        この追い風、逃さず<strong>「デリバリー・店外売上」</strong>に活かしませんか？
-      </div>
-
-      <div class="strong-hook-banner reveal-on-scroll">
-        <p>
-          消費税10%→1%、この波に乗るなら今です。<br>
-          <strong>メニュー開発からデリバリー出店まで、丸ごとお任せください！</strong>
-        </p>
+        出遅れる前に、<br><strong>今から一緒に準備しませんか？</strong>
       </div>
 
       <!-- 追い風訴求の直後のCTA -->
       <div class="cta-box-wrapper reveal-on-scroll" style="margin-top: 32px;">
         <a href="#contact-form" class="btn-super-cta animate-cta-pulse shine-effect">
-          <span class="btn-sub">＼ この追い風、一緒に活かしませんか ／</span>
+          <span class="btn-sub">＼ 入力30秒 ／</span>
           <span class="btn-main">
-            今すぐ無料相談を申し込む
+            今すぐ無料で相談する
             <svg class="btn-arrow-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg>
           </span>
         </a>
-        <div class="cta-caption" style="text-align: center;">※相談無料・入力1分。現状の整理だけでも歓迎です。</div>
       </div>
     </div>
   </section>
@@ -223,16 +325,19 @@
   <section class="section-padding" style="background-color: #FFF9F5;">
     <div class="container">
       <div class="section-headline reveal-on-scroll">
-        <span class="badge" style="background: var(--primary);">PROVEN BRAND</span>
-        <h2>ヒットメニューも、ご用意しています。</h2>
+        <h2 class="hl-title" aria-label="ヒットメニューも、ご用意しています。"><span class="hl-one">ヒットメニューも、<em>ご用意しています。</em></span></h2>
         <p class="section-sub">デリバリーで実績のあるメニューを、そのまま導入できます。</p>
       </div>
 
       <div class="proven-menu-box reveal-on-scroll delay-100">
         <div class="proven-header-badge">
-          <div class="sub-title">成功ノウハウをそのままご活用いただけます</div>
+          <div class="ph-title">
+            <span class="ph-l1">成功ノウハウを</span>
+            <span class="ph-l2">そのままご活用いただけます</span>
+          </div>
         </div>
 
+        <div class="brand-slider-wrap">
         <div class="brand-showcase-grid">
           <!-- ブランド 1: ガッツリ系 -->
           <div class="brand-mini-card">
@@ -279,206 +384,26 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="brand-note-bottom">
-          スイーツメニューもご用意。<strong>実績あるメニューから導入でき、必要に応じてオリジナルメニュー開発にも対応可能です。</strong>
-        </div>
-      </div>
-
-      <!-- スピード導入 -->
-      <div class="step-horizontal-row reveal-on-scroll delay-200">
-        <div class="step-h-card">
-          <div class="step-idx"><span class="step-word">STEP</span><span class="step-no">1</span></div>
-          <div class="step-body">
-            <div class="step-txt">無料相談</div>
-            <div class="step-sub">現状の店舗状況をヒアリング</div>
+          <!-- 他にも実績メニュー多数 -->
+          <div class="brand-mini-card brand-more-card">
+            <span class="more-plus" role="img" aria-label="生姜焼き"></span>
+            <div class="more-title">他にも、実績メニューを<br>多数ご用意</div>
+            <div class="more-sub">まずは無料相談で、ご紹介します</div>
           </div>
         </div>
-        <div class="step-h-card">
-          <div class="step-idx"><span class="step-word">STEP</span><span class="step-no">2</span></div>
-          <div class="step-body">
-            <div class="step-txt">プランご提案</div>
-            <div class="step-sub">店舗様に合った各種プランのご案内</div>
-          </div>
+          <button type="button" class="brand-next" aria-label="次のメニューを見る"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
-        <div class="step-h-card is-goal">
-          <div class="step-idx"><span class="step-word">STEP</span><span class="step-no">3</span></div>
-          <div class="step-body">
-            <div class="step-txt">販売開始</div>
-            <div class="step-sub">資材・出店設定完了後スタート</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="speed-tag-banner reveal-on-scroll">
-        ⚡ 最短3週間〜4週間程度で販売開始可能
+        <div class="brand-slider-hint" aria-hidden="true"><span>スワイプして次のメニューを見る</span><span class="brand-dots"><i class="on"></i><i></i><i></i></span></div>
       </div>
 
       <div style="margin-top: 32px; text-align: center;">
         <a href="#contact-form" class="btn-super-cta animate-cta-pulse shine-effect">
-          <span class="btn-sub">＼ まずは気軽に相談してみませんか ／</span>
-          <span class="btn-main">無料相談フォームへ進む ▼</span>
+          <span class="btn-sub">＼ 入力30秒 ／</span>
+          <span class="btn-main">
+            今すぐ無料で相談する
+            <svg class="btn-arrow-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg>
+          </span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 問い合わせフォームセクション -->
-  <section id="contact-form" class="form-section section-padding">
-    <div class="container">
-      <div class="form-box reveal-on-scroll">
-        <div class="form-header-title">
-          <span class="badge">ENTRY</span>
-          <h3>無料相談 お問い合わせ</h3>
-          <p>気軽にご相談ください。必須は4項目だけ。入力して送信するだけです。（所要時間：約1分）</p>
-        </div>
-
-        <form id="inquiry-form" novalidate>
-          <!-- 1. 店舗名 * -->
-          <div class="form-group">
-            <label for="shop_name" class="form-label">
-              店舗名 <span class="badge-req">必須</span>
-            </label>
-            <input type="text" id="shop_name" name="shop_name" class="form-control" placeholder="例）炭火焼肉 てらす" required>
-            <div id="err_shop_name" class="form-error-msg"></div>
-          </div>
-
-          <!-- 2. 担当者名 * -->
-          <div class="form-group">
-            <label for="manager_name" class="form-label">
-              担当者名 <span class="badge-req">必須</span>
-            </label>
-            <input type="text" id="manager_name" name="manager_name" class="form-control" placeholder="例）山田 太郎" required>
-            <div id="err_manager_name" class="form-error-msg"></div>
-          </div>
-
-          <!-- 10. メールアドレス（返信先） * -->
-          <div class="form-group">
-            <label for="email" class="form-label">
-              メールアドレス（返信先） <span class="badge-req">必須</span>
-            </label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="例）restaurant@example.com" required>
-            <div id="err_email" class="form-error-msg"></div>
-          </div>
-
-          <!-- 11. 電話番号（返信先） * -->
-          <div class="form-group">
-            <label for="phone" class="form-label">
-              電話番号（返信先） <span class="badge-req">必須</span>
-            </label>
-            <input type="tel" id="phone" name="phone" class="form-control" placeholder="例）09012345678" required>
-            <div id="err_phone" class="form-error-msg"></div>
-          </div>
-
-          <!-- 任意項目（折りたたみ）: 入力負担を減らすため既定では閉じておく -->
-          <details class="form-optional-details">
-            <summary>もう少し詳しく伝える（任意）</summary>
-          <!-- 3. 業態（フリーテキスト） -->
-          <div class="form-group">
-            <label for="business_type" class="form-label">
-              業態 <span class="badge-opt">任意</span>
-            </label>
-            <input type="text" id="business_type" name="business_type" class="form-control" placeholder="例）居酒屋、ラーメン、焼肉、カフェ等">
-          </div>
-
-          <!-- 4. 店舗エリア（都道府県＋市区町村） * -->
-          <div class="form-group">
-            <label for="shop_area" class="form-label">
-              店舗エリア（都道府県＋市区町村） <span class="badge-opt">任意</span>
-            </label>
-            <input type="text" id="shop_area" name="shop_area" class="form-control" placeholder="例）東京都渋谷区道玄坂">
-          </div>
-
-          <!-- 5. 月商（フリーテキスト）万円 -->
-          <div class="form-group">
-            <label for="monthly_sales" class="form-label">
-              月商 <span class="badge-opt">任意</span>
-            </label>
-            <div class="input-with-unit">
-              <input type="text" id="monthly_sales" name="monthly_sales" class="form-control" placeholder="例）350">
-              <span class="input-unit-text">万円</span>
-            </div>
-            <div class="form-help-text">※概算で結構です</div>
-          </div>
-
-          <!-- 6. 現在のテイクアウト（有・無） * -->
-          <div class="form-group">
-            <label class="form-label">
-              現在のテイクアウト <span class="badge-opt">任意</span>
-            </label>
-            <div class="radio-button-group">
-              <label class="radio-btn-label">
-                <input type="radio" name="takeout_status" value="有">
-                <span class="radio-btn-tile">有</span>
-              </label>
-              <label class="radio-btn-label">
-                <input type="radio" name="takeout_status" value="無">
-                <span class="radio-btn-tile">無</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 7. 現在のデリバリー（有・無） * -->
-          <div class="form-group">
-            <label class="form-label">
-              現在のデリバリー <span class="badge-opt">任意</span>
-            </label>
-            <div class="radio-button-group">
-              <label class="radio-btn-label">
-                <input type="radio" name="delivery_status" value="有">
-                <span class="radio-btn-tile">有</span>
-              </label>
-              <label class="radio-btn-label">
-                <input type="radio" name="delivery_status" value="無">
-                <span class="radio-btn-tile">無</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 8. Uber Eats等の利用状況（有・無） * -->
-          <div class="form-group">
-            <label class="form-label">
-              Uber Eats等の利用状況 <span class="badge-opt">任意</span>
-            </label>
-            <div class="radio-button-group">
-              <label class="radio-btn-label">
-                <input type="radio" name="ubereats_status" value="有">
-                <span class="radio-btn-tile">有</span>
-              </label>
-              <label class="radio-btn-label">
-                <input type="radio" name="ubereats_status" value="無">
-                <span class="radio-btn-tile">無</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 9. 営業時間（フリーテキスト） -->
-          <div class="form-group">
-            <label for="business_hours" class="form-label">
-              営業時間 <span class="badge-opt">任意</span>
-            </label>
-            <input type="text" id="business_hours" name="business_hours" class="form-control" placeholder="例）11:30〜14:30 / 17:00〜23:00">
-          </div>
-
-          </details>
-
-          <!-- 12. その他備考（フリーテキスト） -->
-          <div class="form-group">
-            <label for="notes" class="form-label">
-              その他備考 <span class="badge-opt">任意</span>
-            </label>
-            <textarea id="notes" name="notes" class="form-control" rows="3" placeholder="ご質問や連絡希望時間帯などがあればご記入ください。"></textarea>
-          </div>
-
-          <div style="text-align: center; margin: 20px 0; font-size: 12px; color: var(--text-light);">
-            ※ご入力いただいた情報は、お問い合わせ対応のみに使用いたします。
-          </div>
-
-          <button type="submit" class="submit-btn shine-effect">
-            上記内容で無料相談を申し込む
-          </button>
-        </form>
       </div>
     </div>
   </section>
@@ -500,10 +425,10 @@
   <aside id="floating-cta" class="floating-bottom-cta" aria-label="ページ下部固定CTA">
     <div class="floating-cta-text">
       <div class="main-text">Uber Eatsが売れない、その原因を一緒に探します。</div>
-      <div class="sub-text">相談無料・入力1分</div>
+      <div class="sub-text">入力30秒</div>
     </div>
     <a href="#contact-form" class="floating-cta-btn shine-effect">
-      <span>無料で相談</span>
+      <span>今すぐ無料で相談する</span>
     </a>
   </aside>
 
@@ -512,7 +437,10 @@
     <div class="container">
       <div class="footer-content">
         <div>
-          <h4 class="footer-title">Meshi Drive（メシドライブ）</h4>
+          <div class="footer-title"><span class="brand-logo footer-logo"><span class="logo-mark" aria-label="Meshi Drive（メシドライブ）">
+            <svg class="logo-icon" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="#E8542A"/><path d="M7 17.5h20a10 10 0 0 1-20 0z" fill="#fff"/><path d="M12 9.5c-1.5 1.6 1.5 3 0 4.6M17 8c-1.5 1.6 1.5 3 0 4.6M22 9.5c-1.5 1.6 1.5 3 0 4.6" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="logo-text"><span class="logo-meshi">Meshi</span><span class="logo-drive">Drive</span></span>
+          </span></span></div>
           <p style="line-height: 1.6; margin-bottom: 8px;">
             デリバリーも、店内も 売れる導線を。<br>
             飲食店の店外売上を最大化するメニュー導入・販売運用伴走支援サービス。
@@ -525,6 +453,7 @@
           <h4 class="footer-title">運営会社情報</h4>
           <ul class="footer-list">
             <li><strong>会社名：</strong> 株式会社テラスヒ</li>
+            <li><strong>所在地：</strong> 東京都葛飾区亀有3丁目30番2号 町田ビル1階</li>
             <li><strong>お電話：</strong> 070-7781-3002</li>
             <li><strong>メール：</strong> terasuhi.inc@gmail.com</li>
           </ul>

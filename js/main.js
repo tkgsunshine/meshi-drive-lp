@@ -37,11 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (floatingCta && heroSection && formSection) {
     const handleScroll = () => {
       const heroBottom = heroSection.getBoundingClientRect().bottom;
-      const formTop = formSection.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
 
-      // ヒーローを過ぎて、かつフォームが見える手前まで表示
-      if (heroBottom < 0 && formTop > windowHeight - 100) {
+      // フォームはヒーロー内にあるため、ヒーローを過ぎたら表示
+      if (heroBottom < 0) {
         floatingCta.classList.add('visible');
       } else {
         floatingCta.classList.remove('visible');
@@ -195,16 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const labels = {
         shop_name: '店舗名',
         manager_name: '担当者名',
-        business_type: '業態',
-        shop_area: '店舗エリア',
-        monthly_sales: '月商（万円）',
-        takeout_status: '現在のテイクアウト',
-        delivery_status: '現在のデリバリー',
         ubereats_status: 'Uber Eats等の利用状況',
-        business_hours: '営業時間',
         email: 'email',
-        phone: '電話番号',
-        notes: 'ご相談内容・備考'
+        phone: '電話番号'
       };
       const formData = new FormData();
       Object.keys(labels).forEach(name => {
@@ -323,3 +314,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// メニュー紹介スライダーのドット表示（スマホのスワイプ位置に合わせて切り替え）
+(function () {
+  var grid = document.querySelector('.brand-showcase-grid');
+  var dots = document.querySelectorAll('.brand-dots i');
+  if (!grid || !dots.length) return;
+  grid.addEventListener('scroll', function () {
+    var cards = grid.querySelectorAll('.brand-mini-card');
+    var idx = 0;
+    var best = Infinity;
+    cards.forEach(function (c, i) {
+      var d = Math.abs(c.offsetLeft - grid.scrollLeft - grid.firstElementChild.offsetLeft);
+      if (d < best) { best = d; idx = i; }
+    });
+    dots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
+  }, { passive: true });
+})();
+
+// メニュー紹介スライダーの「次へ」ボタン（薄い矢印）
+(function () {
+  var grid = document.querySelector('.brand-showcase-grid');
+  var btn = document.querySelector('.brand-next');
+  if (!grid || !btn) return;
+  function update() {
+    var atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+    btn.classList.toggle('is-hidden', atEnd);
+  }
+  btn.addEventListener('click', function () {
+    var card = grid.querySelector('.brand-mini-card');
+    var step = card ? card.getBoundingClientRect().width + 12 : grid.clientWidth * 0.8;
+    grid.scrollBy({ left: step, behavior: 'smooth' });
+  });
+  grid.addEventListener('scroll', update, { passive: true });
+  update();
+})();

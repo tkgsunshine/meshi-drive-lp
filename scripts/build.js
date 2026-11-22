@@ -48,16 +48,9 @@ try {
 const requiredFields = [
   { name: '店舗名（必須）', regex: /id=["']shop_name["'].*required/s },
   { name: '担当者名（必須）', regex: /id=["']manager_name["'].*required/s },
-  { name: '業態（任意）', regex: /id=["']business_type["']/s },
-  { name: '店舗エリア（任意）', regex: /id=["']shop_area["']/s },
-  { name: '月商（任意・単位万円）', regex: /id=["']monthly_sales["']/s },
-  { name: '現在のテイクアウト（任意）', regex: /name=["']takeout_status["']/s },
-  { name: '現在のデリバリー（任意）', regex: /name=["']delivery_status["']/s },
   { name: 'Uber Eats等の利用状況（任意）', regex: /name=["']ubereats_status["']/s },
-  { name: '営業時間（任意）', regex: /id=["']business_hours["']/s },
   { name: '返信先メアド（必須）', regex: /id=["']email["'].*required/s },
-  { name: '返信先電話番号（必須）', regex: /id=["']phone["'].*required/s },
-  { name: 'その他備考（任意）', regex: /id=["']notes["']/s }
+  { name: '返信先電話番号（必須）', regex: /id=["']phone["'].*required/s }
 ];
 
 for (const field of requiredFields) {
@@ -73,7 +66,6 @@ reportCheck('No automated score diagnosis in LP', !htmlContent.includes('78点')
 reportCheck('Proven brand case: 豚丼ジャンクキング / 豚キムチ / 生姜野郎', htmlContent.includes('豚丼ジャンクキング') && htmlContent.includes('生姜野郎'));
 reportCheck('Proven brand case: 風来麻辣湯', htmlContent.includes('風来麻辣湯'));
 reportCheck('Solution title updated', htmlContent.includes('メニュー導入からデリバリー運用まで、まとめてサポート'));
-reportCheck('Proven brand note updated', htmlContent.includes('スイーツメニューもご用意'));
 reportCheck('Company info present: 株式会社テラスヒ', htmlContent.includes('株式会社テラスヒ'));
 reportCheck('Manager info removed from footer', !htmlContent.includes('担当者：後野智行'));
 
@@ -94,6 +86,10 @@ fs.writeFileSync(path.join(distDir, 'index.html'), htmlContent, 'utf-8');
 const v1Path = path.join(projectRoot, 'index-v1-tax-focus.html');
 if (fs.existsSync(v1Path)) {
   fs.writeFileSync(path.join(distDir, 'index-v1-tax-focus.html'), fs.readFileSync(v1Path, 'utf-8'), 'utf-8');
+}
+const ghostPath = path.join(projectRoot, 'index-ghost.html');
+if (fs.existsSync(ghostPath)) {
+  fs.writeFileSync(path.join(distDir, 'index-ghost.html'), fs.readFileSync(ghostPath, 'utf-8'), 'utf-8');
 }
 fs.writeFileSync(path.join(distCssDir, 'style.css'), cssContent, 'utf-8');
 fs.writeFileSync(path.join(distJsDir, 'main.js'), jsContent, 'utf-8');
