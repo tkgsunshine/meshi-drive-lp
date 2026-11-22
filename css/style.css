@@ -2450,9 +2450,9 @@ html, body {
 .hb-big { position: relative; }
 .hb-big .hb-note {
   position: absolute;
-  top: 3px;
-  right: -10px;
-  font-size: 0.85rem;
+  top: 6px;
+  right: -6px;
+  font-size: 0.55rem;
   font-weight: 800;
   line-height: 1;
   color: #555;
