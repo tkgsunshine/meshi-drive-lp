@@ -2446,3 +2446,14 @@ html, body {
   transform: skewX(-8deg);
 }
 .hero-win-headline .hw-line { font-weight: 400; }
+
+.hb-big { position: relative; }
+.hb-big .hb-note {
+  position: absolute;
+  top: -3px;
+  right: -9px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #555;
+}
