@@ -2763,3 +2763,7 @@ html, body {
   width: 84px; height: 84px; line-height: 0; font-size: 0;
   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.45);
 }
+
+/* 2行見出しを左右にずらす */
+.section-headline h2.hl-title.hl-stagger span:first-child { margin: 0 auto 6px 0; }
+.section-headline h2.hl-title.hl-stagger span:last-child { margin: 0 0 6px auto; }
