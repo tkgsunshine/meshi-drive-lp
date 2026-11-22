@@ -2757,3 +2757,9 @@ html, body {
 /* 21字の見出しを1行に（文字は少し小さめ） */
 .section-headline h2.hl-title span.hl-one.hl-long { font-size: min(4.1vw, 1.7rem); padding: 5px 7px; }
 @media (min-width: 769px) { .section-headline h2.hl-title span.hl-one.hl-long { font-size: 1.7rem; padding: 6px 20px; } }
+
+.brand-more-card .more-plus {
+  background: #fff url("../images/hero-2-shoga-800.webp") center / cover no-repeat;
+  width: 84px; height: 84px; line-height: 0; font-size: 0;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.45);
+}
