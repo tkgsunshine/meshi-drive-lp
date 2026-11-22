@@ -2279,3 +2279,17 @@ html, body {
   border-bottom: 1px dashed #E4E4E7;
   margin-bottom: 16px;
 }
+
+/* 導入事例 */
+.case-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 1000px; margin: 0 auto; }
+@media (min-width: 900px) { .case-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+.case-card { background: var(--primary-lighter); border: 2px solid var(--primary-border); border-radius: 16px; padding: 22px 20px; text-align: center; }
+.case-type { display: inline-block; background: var(--primary); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px; }
+.case-meta { margin: 12px 0 8px; font-size: 14px; font-weight: 800; color: #333; }
+.case-sales-label { margin: 0; font-size: 12px; font-weight: 700; color: var(--text-muted); }
+.case-sales { margin: 2px 0 12px; font-weight: 900; line-height: 1.2; }
+.case-from { font-size: 18px; color: var(--text-muted); }
+.case-arrow { margin: 0 6px; font-size: 16px; color: var(--primary); }
+.case-to { font-size: 32px; color: var(--primary); }
+.case-desc { margin: 0; font-size: 13px; line-height: 1.7; text-align: left; color: #444; }
+.case-note { margin: 16px 0 0; font-size: 11px; text-align: center; color: var(--text-muted); }
