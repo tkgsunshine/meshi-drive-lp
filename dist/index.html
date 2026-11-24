@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://connect.facebook.net">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&display=swap">
   <link rel="stylesheet" href="./css/style.css">
   <!-- Meta Pixel -->
   <script>
@@ -64,7 +64,9 @@
           <span class="hw-line hw-line-1">Uber Eatsの月商、</span>
           <span class="hw-line hw-line-2"><span class="hw-from">5万円から</span><span class="hw-to">31万円へ。</span></span>
         </h1>
-        <p class="hero-win-sub"><span>Uber Eatsが売れない方も、これから始める方も。</span></p>
+        <p class="hero-win-sub"><span>あなたのお店のデリバリー売上、まだ伸ばせます。</span></p>
+        <p class="hero-win-desc">メニュー提供・出店準備から広告・キャンペーン運用まで。<br>飲食店のデリバリー売上を伸ばす、運用支援サービス。</p>
+        <p class="hero-win-desc hero-win-desc-em">新規立ち上げ・既存店の運用改善どちらも対応可能</p>
         <ul class="hero-badges">
           <li class="hero-badge hero-badge-accent"><span class="hb-small">初期費用</span><span class="hb-big">0<small>円</small></span><span class="hb-tag">キャンペーン中</span></li>
           <li class="hero-badge"><span class="hb-small">自店舗ブランド</span><span class="hb-big">86<small>万円</small><sup class="hb-note">※</sup></span><span class="hb-tag">最高売上</span></li>
@@ -126,19 +128,27 @@
               <div id="err_phone" class="form-error-msg"></div>
             </div>
 
-            <!-- 8. Uber Eats等の利用状況（有・無） * -->
+            <!-- 現在のお悩み（任意・選択式） -->
             <div class="form-group">
               <label class="form-label">
-                Uber Eats等の利用状況 <span class="badge-opt">任意</span>
+                現在のお悩み <span class="badge-opt">任意</span>
               </label>
-              <div class="radio-button-group">
+              <div class="radio-button-group radio-stack">
                 <label class="radio-btn-label">
-                  <input type="radio" name="ubereats_status" value="有">
-                  <span class="radio-btn-tile">有</span>
+                  <input type="radio" name="concern" value="既存デリバリーの売上を伸ばしたい">
+                  <span class="radio-btn-tile">既存デリバリーの売上を伸ばしたい</span>
                 </label>
                 <label class="radio-btn-label">
-                  <input type="radio" name="ubereats_status" value="無">
-                  <span class="radio-btn-tile">無</span>
+                  <input type="radio" name="concern" value="これからデリバリーを始めたい">
+                  <span class="radio-btn-tile">これからデリバリーを始めたい</span>
+                </label>
+                <label class="radio-btn-label">
+                  <input type="radio" name="concern" value="新しいメニュー・ブランドを増やしたい">
+                  <span class="radio-btn-tile">新しいメニュー・ブランドを増やしたい</span>
+                </label>
+                <label class="radio-btn-label">
+                  <input type="radio" name="concern" value="まずはサービス内容を聞きたい">
+                  <span class="radio-btn-tile">まずはサービス内容を聞きたい</span>
                 </label>
               </div>
             </div>
@@ -177,8 +187,8 @@
           <span class="sol-step-num">02</span>
           <div class="sol-step-rail"><span class="sol-step-dot"></span></div>
           <span class="sol-step-tag">販売設計</span>
-          <div class="sol-step-title">お店に合った売り方を、一緒に決めます</div>
-          <div class="sol-step-desc">メニューごとに売価や販売チャネルを整理して、店頭・テイクアウト・デリバリーそれぞれに合った売り方を設計します。</div>
+          <div class="sol-step-title">売れるメニューと価格を、一緒に考えます</div>
+          <div class="sol-step-desc">お店の商品や販売状況に合わせて、デリバリーで売れやすいメニュー構成や価格設定をご提案。店頭・テイクアウトでの販売も見据え、売上アップにつながる商品づくりをサポートします。</div>
         </div>
         <div class="sol-step reveal-on-scroll delay-300">
           <span class="sol-step-num">03</span>
@@ -210,30 +220,30 @@
     </div>
   </section>
 
-  <!-- 自店舗ブランドが主、弊社メニューでのゴーストレストランも可能 -->
+  <!-- 自店舗ブランドが主、弊社ブランドでのバーチャルレストランも可能 -->
   <section class="section-padding" style="background: #FFF9F5;">
     <div class="container">
       <div class="section-headline reveal-on-scroll">
         <p class="section-lead">まずは、自店舗ブランドから。</p>
         <h2 class="hl-title hl-stagger" aria-label="自店舗ブランドを軸に、デリバリーを伸ばします"><span>自店舗ブランドを軸に、</span><span>デリバリーを伸ばします</span></h2>
-        <p class="section-sub">お店のメニューをもとにデリバリーメニューも開発するので、無駄が少なく始められます。<br>ご希望があれば、弊社ブランドでゴーストレストランを出すことも可能です。</p>
+        <p class="section-sub">お店のメニュー又は弊社ブランドメニューの活用で、デリバリーを無駄なく始められます。<br>ご希望があれば、弊社ブランドでバーチャルレストランを出すことも可能です。</p>
       </div>
 
       <div class="ghost-compare reveal-on-scroll delay-100">
         <div class="ghost-card ghost-card-good">
-          <span class="ghost-tag">自店舗ブランドのデリバリー</span>
+          <span class="ghost-tag">自店舗ブランドのデリバリー売上を強化</span>
           <ul>
-            <li>お店のメニューをもとにデリバリーメニューも開発するので、無駄が少ない</li>
-            <li>店頭・テイクアウト・デリバリーで売上を分散できる</li>
-            <li>今ある厨房と人で始められる</li>
+            <li>お店メニューや弊社ブランドメニューを活かし、デリバリーで売れやすい商品構成・価格をご提案</li>
+            <li>Uber Eats・出前館・ロケットナウなど、複数の販売チャネルで売上拡大を目指せる</li>
+            <li>今ある厨房・設備・スタッフを活用し、大きな追加投資を抑えて始められる</li>
           </ul>
         </div>
         <div class="ghost-card ghost-card-good ghost-card-plus">
           <span class="plus-alpha" aria-hidden="true">＋α</span>
-          <span class="ghost-tag">弊社ブランドでゴーストも可能</span>
+          <span class="ghost-tag">バーチャルレストランで新たな売上機会を</span>
           <ul>
-            <li>弊社ブランドで、デリバリー専門店を追加できる</li>
-            <li>各プラットフォームの規制の動きを見ながら、無理のない形をご提案</li>
+            <li>弊社が提供するブランドを活用し、既存店舗に新たなデリバリー販売の機会を追加できます</li>
+            <li>出前館・ロケットナウなど、各媒体の掲載条件に合わせて出店をサポートします</li>
           </ul>
         </div>
       </div>
@@ -260,7 +270,7 @@
 
       <div class="case-grid">
         <article class="case-card reveal-on-scroll">
-          <span class="case-type">既存 自店舗ブランド｜売上改善</span>
+          <span class="case-type">既存店の自店舗ブランド運用改善</span>
           <p class="case-meta"><b>インド料理店</b><span>住宅街エリア</span></p>
           <p class="case-sales-label">月商</p>
           <p class="case-sales"><span class="case-from">5万円</span><span class="case-arrow">➔</span><span class="case-to">31<small>万円</small></span></p>
@@ -269,18 +279,18 @@
           <p class="case-desc">すでに運営中のデリバリー店舗を改善。広告・キャンペーン運用を見直し、売上アップを実現しました。</p>
         </article>
         <article class="case-card reveal-on-scroll delay-100">
-          <span class="case-type">新規 自店舗ブランド｜立ち上げ</span>
+          <span class="case-type">自店舗ブランド新規立ち上げ</span>
           <p class="case-meta"><b>ラーメン店</b><span>郊外エリア</span></p>
           <p class="case-sales-label">最高売上</p>
           <p class="case-sales"><span class="case-to">約86<small>万円</small></span></p>
           <p class="case-desc">デリバリー未経験のお店が、Meshi Driveのメニューを活用して新たな売上を獲得しました。</p>
         </article>
         <article class="case-card reveal-on-scroll delay-200">
-          <span class="case-type">ゴーストレストラン</span>
+          <span class="case-type">バーチャルレストランブランド導入</span>
           <p class="case-meta"><b>居酒屋</b><span>オフィス街エリア</span></p>
           <p class="case-sales-label">最高売上</p>
           <p class="case-sales"><span class="case-to">約52<small>万円</small></span></p>
-          <p class="case-desc">既存の店舗と厨房を活用してゴーストレストランを導入。新たな売上の柱をつくりました。</p>
+          <p class="case-desc">既存の店舗と厨房を活用してバーチャルレストランを導入。新たな売上の柱をつくりました。</p>
         </article>
       </div>
       <p class="case-note">※いずれも個別店舗の実績です。成果は店舗の立地・業態・運用状況により異なります。</p>
@@ -442,8 +452,8 @@
             <span class="logo-text"><span class="logo-meshi">Meshi</span><span class="logo-drive">Drive</span></span>
           </span></span></div>
           <p style="line-height: 1.6; margin-bottom: 8px;">
-            デリバリーも、店内も 売れる導線を。<br>
-            飲食店の店外売上を最大化するメニュー導入・販売運用伴走支援サービス。
+            デリバリーも、店内も。売れる導線を。<br>
+            メニュー導入からデリバリーの立ち上げ・集客・運用改善まで。飲食店の売上拡大をトータルでサポートします。
           </p>
           <p style="font-size: 11px; color: #71717A;">
             ※本サイトに記載の税制方針は8月5日閣議決定基本方針に基づくものです。

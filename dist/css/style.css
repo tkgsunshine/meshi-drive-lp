@@ -2438,14 +2438,14 @@ html, body {
 /* ヒーロー見出し部分のみ：極太フォント＋斜体 */
 .hero-win-headline,
 .hero-win-sub span {
-  font-family: "Dela Gothic One", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
-  font-weight: 400;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: 900;
 }
 .hero-win-headline .hw-line,
 .hero-win-sub span {
   transform: skewX(-8deg);
 }
-.hero-win-headline .hw-line { font-weight: 400; }
+.hero-win-headline .hw-line { font-weight: 900; }
 
 .hb-big { position: relative; }
 .hb-big .hb-note {
@@ -2545,8 +2545,8 @@ html, body {
   margin-bottom: 10px;
 }
 .proven-header-badge .ph-title {
-  font-family: "Dela Gothic One", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
-  font-weight: 400;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: 900;
   line-height: 1.3;
 }
 .proven-header-badge .ph-title span {
@@ -2680,8 +2680,8 @@ html, body {
 
 /* セクション見出し：斜め白帯＋太字（1枚目のデザインを他にも反映） */
 .section-headline h2.hl-title {
-  font-family: "Dela Gothic One", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
-  font-weight: 400;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: 900;
   line-height: 1.3;
   letter-spacing: 0;
   margin: 8px 0 14px;
@@ -2833,4 +2833,45 @@ html, body {
 /* PC：01〜04の数字を、下の丸の真上に置く */
 @media (min-width: 768px) {
   .sol-step-num { text-align: center; margin-right: -14px; }
+}
+
+/* ヒーロー説明文 */
+.hero-win-desc {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.7;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+}
+.hero-win-desc-em {
+  display: table;
+  margin: 0 auto 14px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--primary);
+  text-shadow: none;
+  font-weight: 900;
+}
+@media (min-width: 900px) {
+  .hero-split .hero-win-desc { text-align: left; font-size: 0.95rem; }
+  .hero-split .hero-win-desc-em { margin-left: 0; }
+}
+
+/* フォーム：お悩み選択（縦並び） */
+.radio-button-group.radio-stack { flex-direction: column; gap: 8px; }
+.radio-stack .radio-btn-tile {
+  justify-content: flex-start;
+  text-align: left;
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+/* ヒーローの一言・説明は画面幅に合わせて1行ずつに収める（スマホ） */
+@media (max-width: 899px) {
+  .hero-win-sub span { font-size: min(3.6vw, 0.95rem); white-space: nowrap; padding: 4px 10px; }
+  .hero-win-desc { font-size: min(3.3vw, 0.8rem); }
+  .hero-win-desc-em { font-size: min(3.4vw, 0.8rem); white-space: nowrap; }
 }
